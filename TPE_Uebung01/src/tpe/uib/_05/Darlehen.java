@@ -65,4 +65,8 @@ public class Darlehen {
 
 		return darlehen;
 	}
+	
+	public int rechnen(){
+		return 0;
+	}
 }
