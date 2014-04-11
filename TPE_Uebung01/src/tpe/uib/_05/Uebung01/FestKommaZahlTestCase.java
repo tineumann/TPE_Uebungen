@@ -172,11 +172,4 @@ public class FestKommaZahlTestCase {
 		assertEquals(new Festkommazahl(45.98), Festkommazahl.parse("45.98"));
 		
 	}
-	
-	@Test
-	public void testRunden(){
-		assertEquals(8l, new Festkommazahl(1, 76, 3).getNachkomma());
-	}
-	
-
 }

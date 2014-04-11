@@ -105,7 +105,7 @@ public class Festkommazahl {
 		if (Long.toString(nachKomma).length() > anzahlNachKommaStellen){			
 			//Die letzte Nachkommastelle wird in einen Integer geschrieben.
 			int i = Integer.parseInt(Character.toString(Long.toString(nachKomma)
-					.charAt(anzahlNachKommaStellen - 1)));
+					.charAt(anzahlNachKommaStellen)));
 			//Es werden alle zu übernehmenden Ziffern übernommen.
 			nachKomma = Long.parseLong(Long.toString(nachKomma)
 					.substring(0, anzahlNachKommaStellen));			
