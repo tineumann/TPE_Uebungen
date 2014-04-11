@@ -175,7 +175,7 @@ public class FestKommaZahlTestCase {
 	
 	@Test
 	public void testRunden(){
-		assertEquals(6l, new Festkommazahl(1, 56, 3).getNachkomma());
+		assertEquals(8l, new Festkommazahl(1, 76, 3).getNachkomma());
 	}
 	
 

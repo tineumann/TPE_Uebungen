@@ -207,13 +207,13 @@ public class Festkommazahl {
 		 */
 		if(zahl1.nachKommaStellen 
 				< zahl2.nachKommaStellen){
-			wert1 *= Math.abs(zahl2.nachKommaStellen 
-					- zahl1.nachKommaStellen);
+			wert1 *= Math.pow(10, Math.abs(zahl2.nachKommaStellen 
+					- zahl1.nachKommaStellen));
 		}
 		else if (zahl1.nachKommaStellen 
 				> zahl2.nachKommaStellen){
-			wert2 *= Math.abs(zahl2.nachKommaStellen 
-					- zahl1.nachKommaStellen);
+			wert2 *= Math.pow(10, Math.abs(zahl2.nachKommaStellen 
+					- zahl1.nachKommaStellen));
 		}
 		
 		long ergebnis = wert1 - wert2;
