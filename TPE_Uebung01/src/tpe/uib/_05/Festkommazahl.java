@@ -1,4 +1,4 @@
-package tpe.uib._05;
+package tpe.uib._05.Uebung01;
 /**
  * Die Klasse Festkommazahl stellt Methoden bereit, um mit POSITIVEN 
  * Festkommazahlen umgehen zu können. 

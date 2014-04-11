@@ -1,4 +1,4 @@
-package tpe.uib._05;
+package tpe.uib._05.Uebung01;
 
 /**
  * Gibt 3 verschiedene Annuitätendarlehen aus. Die Klassen Darlehen und 

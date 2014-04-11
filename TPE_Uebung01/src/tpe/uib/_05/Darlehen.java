@@ -1,4 +1,4 @@
-package tpe.uib._05;
+package tpe.uib._05.Uebung01;
 
 /**
  * Berechnet ein einfaches Annuitätendarlehen. Zur Benutzung wird die Klasse 
@@ -8,8 +8,6 @@ package tpe.uib._05;
  * @author Constantin Schneider, 13152720
  */
 public class Darlehen {
-	//test
-	
 	private final Festkommazahl darlehenssumme;
 	private Festkommazahl annuität;
 	private double zinssatz;
@@ -67,5 +65,4 @@ public class Darlehen {
 
 		return darlehen;
 	}
-	
 }

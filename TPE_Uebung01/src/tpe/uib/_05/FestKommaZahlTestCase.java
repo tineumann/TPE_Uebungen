@@ -1,4 +1,4 @@
-package tpe.uib._05;
+package tpe.uib._05.Uebung01;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
