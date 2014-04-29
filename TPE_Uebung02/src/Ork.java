@@ -1,4 +1,4 @@
 
-public class Ork {
+public class Ork extends Wesen {
 
 }
