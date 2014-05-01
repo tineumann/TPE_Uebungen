@@ -47,13 +47,4 @@ public enum Rasse implements Wesen {
  public int getKosten(){
 	 return this.kosten;
  }
- 
- @Override 
- public boolean isLebendig(){
-	 if(this.lebenspunkte > 0)
-		 return true;
-	 else
-		 return false;
-	 }
- 
 }
