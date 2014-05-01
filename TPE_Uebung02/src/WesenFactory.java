@@ -1,19 +1,19 @@
 
 public class WesenFactory {
 
-	public static Ork createOrk(){
-		return new Ork();
+	public static Wesen createOrk(){
+		return null;
 	}
 	
-	public static Mensch createMensch(){
-		return new Mensch();
+	public static Wesen createMensch(){
+		return null;
 	}
 	
-	public static Nachtelf createNachtelf(){
-		return new Nachtelf();
+	public static Wesen createNachtelf(){
+		return null;
 	}
 	
-	public static Untoter createUntoter(){
-		return new Untoter();
+	public static Wesen createUntoter(){
+		return null;
 	}
 }

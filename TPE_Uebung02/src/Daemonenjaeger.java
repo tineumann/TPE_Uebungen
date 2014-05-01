@@ -7,7 +7,7 @@
  *
  */
 
-public class Daemonenjaeger extends Nachtelf {
+public class Daemonenjaeger extends Wesen {
 	
 	// Daemonenjaeger bekommt das Element LUFT zugewiesen
 	Element element = Element.LUFT;

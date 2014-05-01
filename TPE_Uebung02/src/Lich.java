@@ -7,7 +7,7 @@
  *
  */
 
-public class Lich extends Untoter {
+public class Lich extends Wesen {
 	
 	// Lich bekommt das Element WASSER zugewiesen
 	Element element = Element.WASSER;
