@@ -1,4 +1,12 @@
-
+/**
+ * Die abstrakte Klasse Wesen stellt ledeiglich Attribute und Methoden ihrer
+ * Subklassen dar. Es sollen keine Objekte vom Typ Wesen erzeugt werden, da
+ * es nur Objekte ihrer Subklassen gibt.
+ * 
+ * @author Constantin Schneider
+ * @author Timo Neumann
+ *
+ */
 public abstract class Wesen {
 
 	private int lebenspunkte;
