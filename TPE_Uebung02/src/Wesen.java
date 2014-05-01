@@ -7,7 +7,7 @@
  * @author Timo Neumann
  *
  */
-public abstract class Wesen {
+public class Wesen {
 
 	private int lebenspunkte;
 	private int ruestung;
