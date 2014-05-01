@@ -11,7 +11,7 @@ public class Erzmagier extends Wesen {
 	
 	// Erzmagier bekommt das Element FEUER zugewiesen
 	Element element = Element.FEUER;
-	
+
 	private static Erzmagier erzmagier = null;
 	
 	/* Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
