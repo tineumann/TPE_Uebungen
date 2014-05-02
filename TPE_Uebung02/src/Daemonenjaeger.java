@@ -10,22 +10,30 @@
 public class Daemonenjaeger extends Wesen {
 	
 	// Daemonenjaeger bekommt das Element LUFT zugewiesen
-	Element element = Element.LUFT;
+	private Element element = Element.LUFT;
+	private double bonusfaktor = 1.2d;
+	private static Daemonenjaeger daemonenjaeger;
 	
-	private static Daemonenjaeger daemonenjaeger = null;
+	static{
+		daemonenjaeger = new Daemonenjaeger();
+	}
 	
 	/* Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
 	 * kann
 	*/
 	private Daemonenjaeger(){
+		super(Rasse.NACHTELF);
+	}
+	
+	@Override
+	public void attack(Kaempfer r){
+		
 	}
 	
 	/*
 	 * Statische Methode, die den einzigen Daemonenjaeger zurückgibt
 	 */
 	public static Daemonenjaeger getDaemonenjaeger(){
-		if(daemonenjaeger == null)
-			daemonenjaeger = new Daemonenjaeger();
 		return daemonenjaeger;
 	}
 }

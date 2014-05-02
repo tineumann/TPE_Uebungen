@@ -11,13 +11,18 @@ public class Lich extends Wesen {
 	
 	// Lich bekommt das Element WASSER zugewiesen
 	Element element = Element.WASSER;
+	private static double bonusfaktor = 1.2d;
+	private static Lich lich;
 	
-	private static Lich lich = null;
+	static{
+		lich = new Lich();
+	}
 	
 	/* Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
 	 * kann
 	*/
 	private Lich(){
+		super(Rasse.UNTOTER);
 	}
 	
 	/*
@@ -27,6 +32,13 @@ public class Lich extends Wesen {
 		if(lich == null)
 			lich = new Lich();
 		return lich;
+	}
+	
+	@Override
+	public void attack(Kaempfer r){
+		if(r instanceof Farseer){
+						
+		}
 	}
 }
 

@@ -10,22 +10,25 @@
 public class Erzmagier extends Wesen {
 	
 	// Erzmagier bekommt das Element FEUER zugewiesen
-	Element element = Element.FEUER;
-
-	private static Erzmagier erzmagier = null;
+	private Element element = Element.FEUER;
+	private double bonusfaktor = 1.2d;
+	private static Erzmagier erzmagier;
+	
+	static{
+		erzmagier = new Erzmagier();
+	}
 	
 	/* Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
 	 * kann
 	*/
 	private Erzmagier(){
+		super(Rasse.MENSCH);
 	}
 	
 	/*
 	 * Statische Methode, die den einzigen Erzmagier zurückgibt
 	 */
 	public static Erzmagier getErzmagier(){
-		if(erzmagier == null)
-			erzmagier = new Erzmagier();
 		return erzmagier;
 	}
 }
