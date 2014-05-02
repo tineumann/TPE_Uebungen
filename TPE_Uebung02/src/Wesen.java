@@ -10,10 +10,6 @@
 public class Wesen implements Kaempfer {
 
 	private int lebenspunkte;
-	private double ruestung;
-	private int schaden;
-	private int geschwindigkeit;
-	private double spezialattribut;
 	private Rasse rasse;
 	
 	public Wesen(Rasse rasse){
