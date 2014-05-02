@@ -1,9 +1,6 @@
-interface Wesen {
+public interface Wesen {
 
 	public boolean isLebendig();
 	
-	/*public void attack(Squad s){
-		
-	}
-	*/
+	public void attack(Squad s);
 }

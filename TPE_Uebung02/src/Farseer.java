@@ -6,7 +6,7 @@
  * @author Timo Neumann
  *
  */
-public class Farseer extends Wesen {
+public class Farseer implements Wesen {
 	
 	// Farseer bekommt das Element ERDE zugewiesen
 	Element element = Element.ERDE;
@@ -18,6 +18,8 @@ public class Farseer extends Wesen {
 	*/
 	private Farseer(){
 	}
+	
+	
 	
 	/*
 	 * Statische Methode, die den einzigen Farseer zurückgibt
