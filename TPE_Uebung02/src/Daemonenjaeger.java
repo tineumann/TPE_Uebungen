@@ -7,7 +7,7 @@
  *
  */
 
-public class Daemonenjaeger implements Wesen {
+public class Daemonenjaeger implements Kaempfer {
 	
 	// Daemonenjaeger bekommt das Element LUFT zugewiesen
 	Element element = Element.LUFT;
