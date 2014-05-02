@@ -6,7 +6,7 @@
  * @author Timo Neumann
  *
  */
-public class Farseer implements Kaempfer {
+public class Farseer extends Wesen {
 	
 	// Farseer bekommt das Element ERDE zugewiesen
 	Element element = Element.ERDE;

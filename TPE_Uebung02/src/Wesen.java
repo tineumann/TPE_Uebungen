@@ -14,6 +14,7 @@ public class Wesen implements Kaempfer {
 	private int schaden;
 	private int geschwindigkeit;
 	private double spezialattribut;
+	private Rasse rasse;
 	
 	public boolean isLebendig(){
 		if(this.lebenspunkte > 0)
@@ -21,8 +22,13 @@ public class Wesen implements Kaempfer {
 		else return false;
 	}
 	
+	@Override
 	public void attack(Squad s){
 		
+	}
+	
+	public Rasse getRasse(){
+		return this.rasse;
 	}
 	
 	public int getGeschwindigkeit(){

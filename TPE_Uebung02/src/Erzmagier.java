@@ -7,7 +7,7 @@
  *
  */
 
-public class Erzmagier extends Kaempfer {
+public class Erzmagier extends Wesen {
 	
 	// Erzmagier bekommt das Element FEUER zugewiesen
 	Element element = Element.FEUER;
