@@ -23,7 +23,7 @@ public class Wesen implements Kaempfer {
 	}
 	
 	@Override
-	public void attack(Squad s){
+	public void attack(Kaempfer r){
 		
 	}
 	
