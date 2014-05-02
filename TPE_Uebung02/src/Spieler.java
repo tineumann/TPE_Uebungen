@@ -5,15 +5,17 @@ public class Spieler {
 	public int getGeld() {
 		return geld;
 	}
-	public void setGeld(int geld) {
-		this.geld = geld;
-	}
 
-	public Squad squad;
+	public Squad squad = new Squad();
 	
 	public Spieler(){
 		
 	}
 	
+	public Kaempfer kaufen(Rasse rasse){
+		geld -= rasse.getKosten();
+		
+		return WesenFactory.createWesen(rasse);
+	}
 	
 }

@@ -1,19 +1,30 @@
 
 public class WesenFactory {
 
-	public static Kaempfer createOrk(){
+	public static Kaempfer createWesen(Rasse rasse){
+		switch(rasse){
+		case MENSCH: return createMensch();
+		case ORK: return createOrk();
+		case NACHTELF: return createNachtelf();
+		case UNTOTER: return createUntoter();
+		default: return null;
+		}
+		
+	}
+
+	private static Kaempfer createOrk(){
 		return null;
 	}
 	
-	public static Kaempfer createMensch(){
+	private static Kaempfer createMensch(){
 		return null;
 	}
 	
-	public static Kaempfer createNachtelf(){
+	private static Kaempfer createNachtelf(){
 		return null;
 	}
 	
-	public static Kaempfer createUntoter(){
+	private static Kaempfer createUntoter(){
 		return null;
 	}
 }

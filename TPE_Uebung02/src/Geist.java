@@ -7,4 +7,6 @@ public class Geist implements Kaempfer {
 			((Wesen) r).setLebenspunkte(((Wesen) r).getLebenspunkte() - 1);
 		}
 	}
+	
+	
 }
