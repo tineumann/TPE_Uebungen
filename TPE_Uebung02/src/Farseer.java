@@ -9,24 +9,30 @@
 public class Farseer extends Wesen {
 	
 	// Farseer bekommt das Element ERDE zugewiesen
-	Element element = Element.ERDE;
+	private Element element = Element.ERDE;
+	private double bonusfaktor = 1.2d;
+	private static Farseer farseer;
 	
-	private static Farseer farseer = null;
+	static{
+		farseer = new Farseer();
+	}
 	
 	/* Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
 	 * kann
 	*/
 	private Farseer(){
+		super(Rasse.ORK);
 	}
 	
-	
+	@Override
+	public void attack(Kaempfer r){
+		
+	}
 	
 	/*
 	 * Statische Methode, die den einzigen Farseer zurückgibt
 	 */
 	public static Farseer getFarseer(){
-		if(farseer == null)
-			farseer = new Farseer();
 		return farseer;
 	}
 }

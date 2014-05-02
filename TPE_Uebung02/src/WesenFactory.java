@@ -1,30 +1,15 @@
-
 public class WesenFactory {
 
-	public static Kaempfer createWesen(Rasse rasse){
-		switch(rasse){
-		case MENSCH: return createMensch();
-		case ORK: return createOrk();
-		case NACHTELF: return createNachtelf();
-		case UNTOTER: return createUntoter();
-		default: return null;
+	public static Kaempfer[] getKaempfer(Rasse rasse, int geld) {
+		int anzahlKaempfer = geld / rasse.getKosten();
+		Kaempfer[] kaempfer = new Kaempfer[anzahlKaempfer];
+		if (anzahlKaempfer > 0) {
+			for (int i = 0; i < anzahlKaempfer; i++) {
+				
+				
+				kaempfer[i] = new Wesen(rasse);
+			}
 		}
-		
-	}
-
-	private static Kaempfer createOrk(){
-		return null;
-	}
-	
-	private static Kaempfer createMensch(){
-		return null;
-	}
-	
-	private static Kaempfer createNachtelf(){
-		return null;
-	}
-	
-	private static Kaempfer createUntoter(){
-		return null;
+		return kaempfer;
 	}
 }

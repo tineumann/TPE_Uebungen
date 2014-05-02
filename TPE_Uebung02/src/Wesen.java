@@ -10,11 +10,17 @@
 public class Wesen implements Kaempfer {
 
 	private int lebenspunkte;
-	private int ruestung;
+	private double ruestung;
 	private int schaden;
 	private int geschwindigkeit;
 	private double spezialattribut;
 	private Rasse rasse;
+	
+	public Wesen(Rasse rasse){
+		this.rasse = rasse;
+		
+		this.lebenspunkte = this.rasse.getLebenspunkte();
+	}
 	
 	public boolean isLebendig(){
 		if(this.lebenspunkte > 0)
@@ -24,29 +30,25 @@ public class Wesen implements Kaempfer {
 	
 	@Override
 	public void attack(Kaempfer r){
+		double damage = this.getRasse().getGeschwindigkeit() 
+				* this.getRasse().getSchaden()
+				* this.getRasse().getSpezialattribut();
 		
+		if(((Wesen)r).rasse == Rasse.MENSCH){
+			damage = beschraenkeSchaden(damage);
+		}
+		
+		((Wesen)r).setLebenspunkte(((Wesen)r).lebenspunkte - (int)damage);
+	}
+	
+	public double beschraenkeSchaden(double damage){
+		return damage * 0.9d;
 	}
 	
 	public Rasse getRasse(){
 		return this.rasse;
 	}
-	
-	public int getGeschwindigkeit(){
-		return this.geschwindigkeit;
-	}
-	
-	public double getSpezialattribut(){
-		return this.spezialattribut;
-	}
-	
-	public int getRuestung(){
-		return this.ruestung;
-	}
-	
-	public int getSchaden(){
-		return this.schaden;
-	}
-	
+
 	public int getLebenspunkte(){
 		return this.lebenspunkte;
 	}
