@@ -25,5 +25,9 @@ public class WesenImpl implements Wesen {
 		
 	}
 	
+	public double getSpezialattribut(){
+		return this.spezialattribut();
+	}
+	
 }
 
