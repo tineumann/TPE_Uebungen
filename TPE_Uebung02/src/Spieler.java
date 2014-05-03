@@ -12,10 +12,4 @@ public class Spieler {
 		
 	}
 	
-	public Kaempfer kaufen(Rasse rasse){
-		geld -= rasse.getKosten();
-		
-		return WesenFactory.createWesen(rasse);
-	}
-	
 }
