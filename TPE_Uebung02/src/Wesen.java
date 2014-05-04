@@ -9,7 +9,7 @@
  */
 public class Wesen implements Kaempfer {
 
-	private int lebenspunkte;
+	private double lebenspunkte;
 	private Rasse rasse;
 	
 	public Wesen(Rasse rasse){
@@ -26,15 +26,26 @@ public class Wesen implements Kaempfer {
 	
 	@Override
 	public void attack(Kaempfer r){
+		if(r instanceof Wesen){
+			Wesen gegner = ((Wesen)r);
+			double damage = getDamage(gegner);
+			gegner.setLebenspunkte(gegner.lebenspunkte - damage);
+		}		
+	}
+	
+	/**
+	 * Errechnet den Schaden, den ein Wesen bei einem Angriff erzeugt.
+	 */
+	public double getDamage(Wesen r){
 		double damage = this.getRasse().getGeschwindigkeit() 
 				* this.getRasse().getSchaden()
 				* this.getRasse().getSpezialattribut();
 		
-		if(((Wesen)r).rasse == Rasse.MENSCH){
+		if(r.rasse == Rasse.MENSCH){
 			damage = beschraenkeSchaden(damage);
 		}
 		
-		((Wesen)r).setLebenspunkte(((Wesen)r).lebenspunkte - (int)damage);
+		return damage;
 	}
 	
 	public double beschraenkeSchaden(double damage){
@@ -45,11 +56,11 @@ public class Wesen implements Kaempfer {
 		return this.rasse;
 	}
 
-	public int getLebenspunkte(){
+	public double getLebenspunkte(){
 		return this.lebenspunkte;
 	}
 	
-	public void setLebenspunkte(int lebenspunkte){
+	public void setLebenspunkte(double lebenspunkte){
 		this.lebenspunkte = lebenspunkte;
 	}
 	

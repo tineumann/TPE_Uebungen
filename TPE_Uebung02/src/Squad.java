@@ -15,8 +15,12 @@ public class Squad{
 
 	private String name;
 	
-	public Squad(String name, Kaempfer[] kaempfer){
-		this.kaempfer = kaempfer;
+	public Squad(String name){
 		this.name = name;
+	}
+	
+	public Squad(String name, Kaempfer[] kaempfer){
+		this(name);
+		this.kaempfer = kaempfer;
 	}
 }

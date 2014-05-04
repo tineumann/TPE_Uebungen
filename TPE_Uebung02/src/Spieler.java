@@ -6,7 +6,7 @@ public class Spieler {
 		return geld;
 	}
 
-	public Squad squad = new Squad();
+	public Squad squad;
 	
 	public Spieler(){
 		
