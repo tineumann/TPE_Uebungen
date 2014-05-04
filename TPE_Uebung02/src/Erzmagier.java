@@ -8,7 +8,7 @@
  */
 
 public class Erzmagier extends Held {
-	private static Erzmagier erzmagier;
+	private static Erzmagier erzmagier = null;
 	
 	static{
 		erzmagier = new Erzmagier();
@@ -28,7 +28,12 @@ public class Erzmagier extends Held {
 		return erzmagier;
 	}
 	
-	
+	public boolean existiert(){
+		if(this.erzmagier == null){
+			return false;
+		}
+		else return true;
+	}
 }
 
 
