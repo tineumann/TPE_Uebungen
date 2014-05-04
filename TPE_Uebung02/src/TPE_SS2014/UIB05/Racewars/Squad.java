@@ -1,4 +1,4 @@
-package TPE_SS2014.UIB05.Racewars.WesenImpl;
+package TPE_SS2014.UIB05.Racewars;
 import java.util.*;
 
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;

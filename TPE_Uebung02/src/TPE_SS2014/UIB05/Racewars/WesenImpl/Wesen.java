@@ -1,8 +1,6 @@
-package TPE_SS2014.UIB05.Racewars.WesenAPI;
+package TPE_SS2014.UIB05.Racewars.WesenImpl;
 
-import TPE_SS2014.UIB05.Racewars.WesenImpl.Erzmagier;
-import TPE_SS2014.UIB05.Racewars.WesenImpl.Mensch;
-import TPE_SS2014.UIB05.Racewars.WesenImpl.Rasse;
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
 
 /**
  * Die Klasse WesenImpl stellt lediglich Attribute und Methoden ihrer Subklassen

@@ -34,6 +34,12 @@ public class Erzmagier extends Held {
 		return erzmagier;
 	}
 	
+	@Override
+	public String toString() {
+		return new String("Erzmagier, LP: "
+				+ Double.toString(this.getLebenspunkte()));
+	}
+	
 	public static boolean isAbsorption(){
 		return absorption;
 	}

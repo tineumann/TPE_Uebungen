@@ -1,7 +1,7 @@
 package TPE_SS2014.UIB05.Racewars.WesenImpl;
 
+import TPE_SS2014.UIB05.Racewars.Squad;
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
-import TPE_SS2014.UIB05.Racewars.WesenAPI.Wesen;
 
 /**
  * Die Klasse Lich ist Subklasse von Untoter. Es gibt nur ein einziges Objekt
@@ -48,5 +48,11 @@ public class Lich extends Held {
 			}
 		}
 		lich.setLebenspunkte(lich.getLebenspunkte() + (anzahlGegner * 7));
+	}
+
+	@Override
+	public String toString() {
+		return new String("Lich, LP: "
+				+ Double.toString(this.getLebenspunkte()));
 	}
 }
