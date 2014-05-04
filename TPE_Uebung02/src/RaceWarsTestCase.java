@@ -24,6 +24,12 @@ import org.junit.Test;
 			Mensch m2 = new Mensch();
 			m1.attack(m2);
 			assertFalse(m2.isLebendig());
+			
+			Mensch m3 = new Mensch();
+			Untoter u1 = new Untoter();
+			m3.attack(u1);
+			assertTrue(440 == u1.getLebenspunkte());
+			
 		}
 	
 
