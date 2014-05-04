@@ -1,4 +1,4 @@
-package TPE_SS2014.UIB05.Racewars;
+package TPE_SS2014.UIB05.Racewars.WesenImpl;
 /**
  * Farseer. Eine Subklasse von Ork. Es wird nur ein Objekt der Klasse Farseer
  * geben, realisiert durch ein Singleton.

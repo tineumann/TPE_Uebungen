@@ -1,4 +1,4 @@
-package TPE_SS2014.UIB05.Racewars;
+package TPE_SS2014.UIB05.Racewars.WesenImpl;
 public enum Rasse {
 
 	ORK(100, 33, 1, 30.0, 4.0, 150), UNTOTER(120, 16, 2, 30.0, 1.6, 70), MENSCH(

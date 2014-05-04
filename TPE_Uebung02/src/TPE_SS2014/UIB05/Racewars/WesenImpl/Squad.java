@@ -1,5 +1,7 @@
-package TPE_SS2014.UIB05.Racewars;
+package TPE_SS2014.UIB05.Racewars.WesenImpl;
 import java.util.*;
+
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
 public class Squad extends ArrayList<Kaempfer>{
 	
 	private static final long serialVersionUID = 1L;

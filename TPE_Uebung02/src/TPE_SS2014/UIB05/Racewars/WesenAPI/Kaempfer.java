@@ -1,4 +1,4 @@
-package TPE_SS2014.UIB05.Racewars;
+package TPE_SS2014.UIB05.Racewars.WesenAPI;
 
 
 public interface Kaempfer {	

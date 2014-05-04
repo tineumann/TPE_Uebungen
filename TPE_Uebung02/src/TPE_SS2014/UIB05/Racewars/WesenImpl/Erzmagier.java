@@ -1,4 +1,4 @@
-package TPE_SS2014.UIB05.Racewars;
+package TPE_SS2014.UIB05.Racewars.WesenImpl;
 /**
  * Die Klasse Erzmagier ist Subklasse von Mensch. Es gibt nur ein einziges
  *  Objekt (Singleton), dem das Element FEUER zugeorndet ist.

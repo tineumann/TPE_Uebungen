@@ -1,4 +1,8 @@
-package TPE_SS2014.UIB05.Racewars;
+package TPE_SS2014.UIB05.Racewars.WesenImpl;
+
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Wesen;
+
 /**
  * Die Klasse Lich ist Subklasse von Untoter. Es gibt nur ein einziges Objekt
  * (Singleton), dem das Element Wasser zugeorndet ist.
