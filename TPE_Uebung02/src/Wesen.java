@@ -10,7 +10,7 @@
 public abstract class Wesen implements Kaempfer {
 
 	private double lebenspunkte;
-	private Rasse rasse;
+	private final Rasse rasse;
 
 	public Wesen(Rasse rasse) {
 		this.rasse = rasse;
@@ -51,16 +51,14 @@ public abstract class Wesen implements Kaempfer {
 				* this.getRasse().getSchaden()
 				* this.getRasse().getSpezialattribut();
 
-		if (r.rasse == Rasse.MENSCH) {
-			damage = beschraenkeSchaden(damage);
+		if (r instanceof Mensch) {
+			damage = ((Mensch)r).beschraenkeSchaden(damage);
 		}
 
 		return damage;
 	}
 
-	public double beschraenkeSchaden(double damage) {
-		return damage * 0.9d;
-	}
+
 
 	public Rasse getRasse() {
 		return this.rasse;
