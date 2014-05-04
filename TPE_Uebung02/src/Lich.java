@@ -31,5 +31,17 @@ public class Lich extends Held {
 			lich = new Lich();
 		return lich;
 	}
+	
+	public void verwesung(Squad s){
+		int anzahlGegner = 0;
+		for(Kaempfer gegner : s.getKaempfer()){
+			if(gegner instanceof Wesen){
+				Wesen wesen = ((Wesen)gegner);
+				wesen.setLebenspunkte(wesen.getLebenspunkte() - 7);
+				anzahlGegner++;
+			}
+		}
+		lich.setLebenspunkte(lich.getLebenspunkte() + (anzahlGegner * 7));		
+	}
 }
 

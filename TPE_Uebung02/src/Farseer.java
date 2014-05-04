@@ -22,11 +22,6 @@ public class Farseer extends Held {
 		super(Rasse.ORK, Element.ERDE, 1.2d);
 	}
 	
-	@Override
-	public void attack(Kaempfer r){
-		
-	}
-	
 	/*
 	 * Statische Methode, die den einzigen Farseer zurückgibt
 	 */

@@ -27,6 +27,8 @@ public class Erzmagier extends Held {
 	public static Erzmagier getErzmagier(){
 		return erzmagier;
 	}
+	
+	
 }
 
 

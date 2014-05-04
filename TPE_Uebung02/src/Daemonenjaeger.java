@@ -8,10 +8,7 @@
  */
 
 public class Daemonenjaeger extends Held {
-	
-	// Daemonenjaeger bekommt das Element LUFT zugewiesen
-	private Element element = Element.LUFT;
-	private double bonusfaktor = 3.0d;
+
 	private static Daemonenjaeger daemonenjaeger;
 	
 	static{
@@ -22,13 +19,7 @@ public class Daemonenjaeger extends Held {
 	 * kann
 	*/
 	private Daemonenjaeger(){
-		super(Rasse.NACHTELF);
-	}
-	
-	@Override
-	public void attack(Kaempfer r){
-		
-		
+		super(Rasse.NACHTELF, Element.LUFT, 3d);
 	}
 	
 	/*
