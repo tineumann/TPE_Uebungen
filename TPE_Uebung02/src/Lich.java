@@ -33,7 +33,7 @@ public class Lich extends Held {
 		return lich;
 	}
 
-	public void verwesung(Squad s) {
+	public static void verwesung(Squad s) {
 		int anzahlGegner = 0;
 		for (Kaempfer gegner : s) {
 			if (gegner instanceof Wesen) {

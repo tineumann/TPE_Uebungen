@@ -9,6 +9,7 @@
 
 public class Erzmagier extends Held {
 	private static Erzmagier erzmagier = null;
+	private static boolean absorption = false;
 	
 	static{
 		erzmagier = new Erzmagier();
@@ -30,6 +31,14 @@ public class Erzmagier extends Held {
 		}
 		
 		return erzmagier;
+	}
+	
+	public static boolean isAbsorption(){
+		return absorption;
+	}
+	
+	public static void absorption(){
+		absorption = true;
 	}
 }
 

@@ -4,28 +4,38 @@
  * 
  * @author Constantin Schneider
  * @author Timo Neumann
- *
+ * 
  */
 
 public class Daemonenjaeger extends Held {
 
 	private static Daemonenjaeger daemonenjaeger;
-	
-	static{
+
+	static {
 		daemonenjaeger = new Daemonenjaeger();
 	}
-	
-	/* Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
+
+	/*
+	 * Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
 	 * kann
-	*/
-	private Daemonenjaeger(){
+	 */
+	private Daemonenjaeger() {
 		super(Rasse.NACHTELF, Element.LUFT, 3d);
 	}
-	
+
 	/*
 	 * Statische Methode, die den einzigen Daemonenjaeger zurückgibt
 	 */
-	public static Daemonenjaeger getDaemonenjaeger(){
+	public static Daemonenjaeger getDaemonenjaeger() {
 		return daemonenjaeger;
+	}
+
+	public static void goldschuss(Squad s) {
+		for (Kaempfer k : s) {
+			if (k instanceof Wesen) {
+				Wesen wesen = ((Wesen) k);
+				wesen.setLebenspunkte(wesen.getLebenspunkte() - 25);
+			}
+		}
 	}
 }

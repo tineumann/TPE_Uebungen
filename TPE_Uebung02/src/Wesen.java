@@ -26,12 +26,21 @@ public abstract class Wesen implements Kaempfer {
 	
 	@Override
 	public void attack(Kaempfer r){
+		double damage = 0;
 		if(r instanceof Wesen){
 			Wesen gegner = ((Wesen)r);
-			double damage = getDamage(gegner) 
+			
+			if(r instanceof Erzmagier && Erzmagier.isAbsorption()){
+				damage = 0;
+			} 
+			
+			else {
+				damage = getDamage(gegner) 
 					/ (gegner.rasse.getRuestung() / 100);
-			gegner.setLebenspunkte(gegner.lebenspunkte - damage);
-		}		
+			}
+				
+			gegner.setLebenspunkte(gegner.lebenspunkte - damage);	
+		}	
 	}
 	
 	/**

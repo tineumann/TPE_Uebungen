@@ -6,6 +6,7 @@ public abstract class Held extends Wesen {
 		super(rasse);
 		this.element = element;
 		this.bonusfaktor = bonusfaktor;
+		super.setLebenspunkte(super.getLebenspunkte() * this.bonusfaktor);
 	}
 
 	@Override
