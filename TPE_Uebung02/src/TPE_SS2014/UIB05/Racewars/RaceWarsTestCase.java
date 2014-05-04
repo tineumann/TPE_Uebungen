@@ -27,7 +27,40 @@ import TPE_SS2014.UIB05.Racewars.WesenAPI.*;
 			Kaempfer[] kaempfer1 = WesenFactory.kaufeMensch(330);			
 			assertEquals(kaempfer1.length, 2);			
 			assertEquals(true, kaempfer1[0] instanceof Erzmagier);
+			
+			//Kaempfer[] kaempfer2 = WesenFactory.kaufeOrk(10);
+			//assertEquals(0, kaempfer2.length);
+		
+			Kaempfer[] kaempfer3 = WesenFactory.kaufeUntoter(70);
+			assertEquals(1, kaempfer3.length);
+			
+			Kaempfer[] kaempfer4 = WesenFactory.kaufeOrk(600);
+			assertEquals(3, kaempfer4.length);
+			
+			Kaempfer[] kaempfer5 = WesenFactory.kaufeUntoter(600);
+			assertEquals(7, kaempfer5.length);
+			
+			Kaempfer[] kaempfer6 = WesenFactory.kaufeMensch(600);
+			assertEquals(4, kaempfer6.length);
+			
+			Kaempfer[] kaempfer7 = WesenFactory.kaufeNachtelf(600);
+			assertEquals(3, kaempfer7.length);
+		}
+		
+		/*@Test
+		public void testAttack(){
+			Mensch m1 = new Mensch();
+			Nachtelf n1 = new Nachtelf();
+			assertFalse(n1.isLebendig());
+		}
+		*/
+		@Test
+		public void testisAbsorption(){
+			Kaempfer[] kaempfer1 = WesenFactory.kaufeOrk(300);
+			Kaempfer[] kaempfer2 = WesenFactory.kaufeMensch(110);
+			kaempfer1[0].attack(kaempfer2[0]);
+			assertEquals(700, kaempfer2[0]);
+			
 		}
 	
-
 }
