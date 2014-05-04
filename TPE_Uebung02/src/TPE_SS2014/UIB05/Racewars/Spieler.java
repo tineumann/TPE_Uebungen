@@ -10,8 +10,7 @@ public class Spieler {
 
 	public Squad squad;
 	
-	public Spieler(){
-		
-	}
-	
+	public Spieler(Squad s){
+		this.squad = s;
+	}	
 }
