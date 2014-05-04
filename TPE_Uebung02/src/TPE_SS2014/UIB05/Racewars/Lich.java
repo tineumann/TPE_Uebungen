@@ -1,3 +1,4 @@
+package TPE_SS2014.UIB05.Racewars;
 /**
  * Die Klasse Lich ist Subklasse von Untoter. Es gibt nur ein einziges Objekt
  * (Singleton), dem das Element Wasser zugeorndet ist.

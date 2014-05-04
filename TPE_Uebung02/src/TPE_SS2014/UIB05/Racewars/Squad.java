@@ -1,3 +1,4 @@
+package TPE_SS2014.UIB05.Racewars;
 import java.util.*;
 public class Squad extends ArrayList<Kaempfer>{
 	

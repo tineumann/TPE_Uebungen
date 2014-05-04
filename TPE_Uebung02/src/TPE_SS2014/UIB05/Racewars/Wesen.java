@@ -1,3 +1,4 @@
+package TPE_SS2014.UIB05.Racewars;
 /**
  * Die Klasse WesenImpl stellt lediglich Attribute und Methoden ihrer Subklassen
  * dar. Es sollen keine Objekte vom Typ Wesen erzeugt werden, da es nur Objekte
