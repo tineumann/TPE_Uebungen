@@ -8,10 +8,6 @@
  */
 
 public class Erzmagier extends Held {
-	
-	// Erzmagier bekommt das Element FEUER zugewiesen
-	private Element element = Element.FEUER;
-	private double bonusfaktor = 5.0d;
 	private static Erzmagier erzmagier;
 	
 	static{
@@ -22,7 +18,7 @@ public class Erzmagier extends Held {
 	 * kann
 	*/
 	private Erzmagier(){
-		super(Rasse.MENSCH);
+		super(Rasse.MENSCH, Element.FEUER, 5d);		
 	}
 	
 	/*

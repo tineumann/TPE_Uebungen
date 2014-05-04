@@ -9,8 +9,6 @@
 public class Farseer extends Held {
 	
 	// Farseer bekommt das Element ERDE zugewiesen
-	private Element element = Element.ERDE;
-	private double bonusfaktor = 1.2d;
 	private static Farseer farseer;
 	
 	static{
@@ -21,7 +19,7 @@ public class Farseer extends Held {
 	 * kann
 	*/
 	private Farseer(){
-		super(Rasse.ORK);
+		super(Rasse.ORK, Element.ERDE, 1.2d);
 	}
 	
 	@Override

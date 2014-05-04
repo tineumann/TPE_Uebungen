@@ -10,8 +10,6 @@
 public class Lich extends Held {
 	
 	// Lich bekommt das Element WASSER zugewiesen
-	Element element = Element.WASSER;
-	private static double bonusfaktor = 2.3d;
 	private static Lich lich;
 	
 	static{
@@ -22,7 +20,7 @@ public class Lich extends Held {
 	 * kann
 	*/
 	private Lich(){
-		super(Rasse.UNTOTER);
+		super(Rasse.UNTOTER, Element.WASSER, 2.3d);
 	}
 	
 	/*
@@ -32,11 +30,6 @@ public class Lich extends Held {
 		if(lich == null)
 			lich = new Lich();
 		return lich;
-	}
-	
-	@Override
-	public void attack(Kaempfer r){
-		
 	}
 }
 
