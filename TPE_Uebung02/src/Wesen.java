@@ -28,7 +28,8 @@ public class Wesen implements Kaempfer {
 	public void attack(Kaempfer r){
 		if(r instanceof Wesen){
 			Wesen gegner = ((Wesen)r);
-			double damage = getDamage(gegner);
+			double damage = getDamage(gegner) 
+					/ (gegner.rasse.getRuestung() / 100);
 			gegner.setLebenspunkte(gegner.lebenspunkte - damage);
 		}		
 	}
