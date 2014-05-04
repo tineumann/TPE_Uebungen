@@ -11,7 +11,7 @@ public class Lich extends Wesen {
 	
 	// Lich bekommt das Element WASSER zugewiesen
 	Element element = Element.WASSER;
-	private static double bonusfaktor = 1.2d;
+	private static double bonusfaktor = 2.3d;
 	private static Lich lich;
 	
 	static{

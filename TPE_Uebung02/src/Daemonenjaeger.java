@@ -11,7 +11,7 @@ public class Daemonenjaeger extends Wesen {
 	
 	// Daemonenjaeger bekommt das Element LUFT zugewiesen
 	private Element element = Element.LUFT;
-	private double bonusfaktor = 1.2d;
+	private double bonusfaktor = 3.0d;
 	private static Daemonenjaeger daemonenjaeger;
 	
 	static{
