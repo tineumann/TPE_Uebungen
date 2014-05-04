@@ -36,9 +36,7 @@ public class Lich extends Wesen {
 	
 	@Override
 	public void attack(Kaempfer r){
-		if(r instanceof Farseer){
-						
-		}
+		
 	}
 }
 
