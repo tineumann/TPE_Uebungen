@@ -7,7 +7,7 @@
  * @author Timo Neumann
  *
  */
-public class Wesen implements Kaempfer {
+public abstract class Wesen implements Kaempfer {
 
 	private double lebenspunkte;
 	private Rasse rasse;

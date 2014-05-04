@@ -4,44 +4,44 @@
  * 
  * @author Constantin Schneider
  * @author Timo Neumann
- *
+ * 
  */
 
 public class Lich extends Held {
-	
+
 	// Lich bekommt das Element WASSER zugewiesen
 	private static Lich lich;
-	
-	static{
+
+	static {
 		lich = new Lich();
 	}
-	
-	/* Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
+
+	/*
+	 * Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
 	 * kann
-	*/
-	private Lich(){
+	 */
+	private Lich() {
 		super(Rasse.UNTOTER, Element.WASSER, 2.3d);
 	}
-	
+
 	/*
 	 * Statische Methode, die den einzigen Lich zurückgibt
 	 */
-	public static Lich getLich(){
-		if(lich == null)
+	public static Lich getLich() {
+		if (lich == null)
 			lich = new Lich();
 		return lich;
 	}
-	
-	public void verwesung(Squad s){
+
+	public void verwesung(Squad s) {
 		int anzahlGegner = 0;
-		for(Kaempfer gegner : s){
-			if(gegner instanceof Wesen){
-				Wesen wesen = ((Wesen)gegner);
+		for (Kaempfer gegner : s) {
+			if (gegner instanceof Wesen) {
+				Wesen wesen = ((Wesen) gegner);
 				wesen.setLebenspunkte(wesen.getLebenspunkte() - 7);
 				anzahlGegner++;
 			}
 		}
-		lich.setLebenspunkte(lich.getLebenspunkte() + (anzahlGegner * 7));		
+		lich.setLebenspunkte(lich.getLebenspunkte() + (anzahlGegner * 7));
 	}
 }
-

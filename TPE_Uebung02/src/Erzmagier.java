@@ -25,14 +25,11 @@ public class Erzmagier extends Held {
 	 * Statische Methode, die den einzigen Erzmagier zurückgibt
 	 */
 	public static Erzmagier getErzmagier(){
-		return erzmagier;
-	}
-	
-	public boolean existiert(){
-		if(this.erzmagier == null){
-			return false;
+		if(erzmagier == null){
+			erzmagier = new Erzmagier();
 		}
-		else return true;
+		
+		return erzmagier;
 	}
 }
 
