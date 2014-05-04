@@ -28,5 +28,11 @@ public class Farseer extends Held {
 	public static Farseer getFarseer(){
 		return farseer;
 	}
+	
+	public void doppelschlag(Squad s){
+		for(int i = 0; i < 2; i++){
+			s.remove((Math.random() * s.size()) - 1);
+		}
+	}
 }
 

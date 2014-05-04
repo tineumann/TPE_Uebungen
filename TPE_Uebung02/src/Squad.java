@@ -1,26 +1,21 @@
-
-public class Squad{
-	private Kaempfer[] kaempfer;
-	public Kaempfer[] getKaempfer() {
-		return kaempfer;
-	}
-
-	public void setKaempfer(Kaempfer[] kaempfer) {
-		this.kaempfer = kaempfer;
+import java.util.*;
+public class Squad extends ArrayList<Kaempfer>{
+	
+	private static final long serialVersionUID = 1L;
+	
+	private String name;
+	
+	public void add(Kaempfer[] kaempfer){
+		for(Kaempfer k : kaempfer){
+			this.add(k);
+		}
 	}
 
 	public String getName() {
 		return name;
 	}
-
-	private String name;
 	
 	public Squad(String name){
 		this.name = name;
-	}
-	
-	public Squad(String name, Kaempfer[] kaempfer){
-		this(name);
-		this.kaempfer = kaempfer;
 	}
 }
