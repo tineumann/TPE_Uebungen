@@ -5,6 +5,14 @@ import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Rasse;
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Held;
 
+/**
+ * Implementierung des Interfaces Held und Subklasse von Wesenimpl.
+ * Stellt alle den Helden gemeinsamen Methoden zur Verfügung.
+ * 
+ * @author Timo Neumann, 1312143
+ * @author Constantin Schneider, 1315272
+ * 
+ */
 public abstract class HeldImpl extends WesenImpl implements Held {
 	Element element;
 	double bonusfaktor;

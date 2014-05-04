@@ -4,11 +4,10 @@ import TPE_SS2014.UIB05.Racewars.Squad;
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Rasse;
 
 /**
- * Farseer. Eine Subklasse von Ork. Es wird nur ein Objekt der Klasse Farseer
- * geben, realisiert durch ein Singleton.
+ * Farseer ist der Held der Orks. Es gibt nur ein einziges Objekt (Singleton).
  * 
- * @author Constantin Schneider
- * @author Timo Neumann
+ * @author Timo Neumann, 1312143
+ * @author Constantin Schneider, 1315272
  * 
  */
 public class Farseer extends HeldImpl {
@@ -20,7 +19,7 @@ public class Farseer extends HeldImpl {
 		farseer = new Farseer();
 	}
 
-	/*
+	/**
 	 * Default-Konstruktor, der nicht außerhalb der Klasse aufgerufen werden
 	 * kann
 	 */
@@ -28,13 +27,18 @@ public class Farseer extends HeldImpl {
 		super(Rasse.ORK, Element.ERDE, 1.2d);
 	}
 
-	/*
+	/**
 	 * Statische Methode, die den einzigen Farseer zurückgibt
 	 */
 	public static Farseer getFarseer() {
 		return farseer;
 	}
 
+	/**
+	 * Spezialattacke von Farseer. Tötet zwei zufällige Kaempfer des Gegners.
+	 * 
+	 * @param Squad s - Squad, die angegriffen wird.
+	 */
 	public static void doppelschlag(Squad s) {
 		for (int i = 0; i < 2; i++) {
 			s.remove((Math.random() * s.size()) - 1);

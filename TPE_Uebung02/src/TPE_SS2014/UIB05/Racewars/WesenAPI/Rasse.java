@@ -1,4 +1,11 @@
 package TPE_SS2014.UIB05.Racewars.WesenAPI;
+
+/**
+ * Enum zur Bestimmung der Rasse eines Wesens.
+ * 
+ * @author Timo Neumann, 1312143
+ * @author Constantin Schneider, 1315272
+ */
 public enum Rasse {
 
 	ORK(100, 33, 1, 30.0, 4.0, 150), UNTOTER(120, 16, 2, 30.0, 1.6, 70), MENSCH(
@@ -34,7 +41,7 @@ public enum Rasse {
 		return this.geschwindigkeit;
 	}
 
-	public double getRuestung() {
+	public double getRuestung() {		
 		return this.ruestung;
 	}
 

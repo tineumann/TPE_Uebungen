@@ -5,14 +5,13 @@ import TPE_SS2014.UIB05.Racewars.WesenAPI.Wesen;
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
 
 /**
- * Die Klasse WesenImpl stellt lediglich Attribute und Methoden ihrer Subklassen
- * dar. Es sollen keine Objekte vom Typ Wesen erzeugt werden, da es nur Objekte
- * ihrer Subklassen gibt.
+ * Implementiert das Interface Wesen und Kaempfer.
  * 
- * @author Constantin Schneider
- * @author Timo Neumann
+ * @author Timo Neumann, 1312143
+ * @author Constantin Schneider, 1315272
  * 
  */
+
 public abstract class WesenImpl implements Wesen, Kaempfer {
 
 	private double lebenspunkte;
