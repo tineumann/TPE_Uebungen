@@ -17,21 +17,25 @@ public class WesenFactory {
 
 		switch (rasse) {
 		case MENSCH:
-			produzierteWesen.add(((Kaempfer) Erzmagier.getErzmagier()));
 			geld -= rasse.getKosten() * 2;
+			if(geld >= 0)
+			produzierteWesen.add(((Kaempfer) Erzmagier.getErzmagier()));
 			break;
 		case ORK:
-			produzierteWesen.add(((Kaempfer) Farseer.getFarseer()));
 			geld -= rasse.getKosten() * 2;
+			if(geld >= 0)
+			produzierteWesen.add(((Kaempfer) Farseer.getFarseer()));
 			break;
 		case UNTOTER:
-			produzierteWesen.add(((Kaempfer) Lich.getLich()));
 			geld -= rasse.getKosten() * 2;
+			if(geld >= 0)
+			produzierteWesen.add(((Kaempfer) Lich.getLich()));
 			break;
 		case NACHTELF:
+			geld -= rasse.getKosten() * 2;
+			if(geld >= 0)
 			produzierteWesen
 					.add(((Kaempfer) Daemonenjaeger.getDaemonenjaeger()));
-			geld -= rasse.getKosten() * 2;
 			break;
 		default:
 			return null;
