@@ -11,7 +11,7 @@ public class Erzmagier extends Wesen {
 	
 	// Erzmagier bekommt das Element FEUER zugewiesen
 	private Element element = Element.FEUER;
-	private double bonusfaktor = 1.2d;
+	private double bonusfaktor = 5.0d;
 	private static Erzmagier erzmagier;
 	
 	static{
