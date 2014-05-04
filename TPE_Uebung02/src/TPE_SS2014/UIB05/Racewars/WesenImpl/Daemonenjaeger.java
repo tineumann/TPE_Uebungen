@@ -2,6 +2,7 @@ package TPE_SS2014.UIB05.Racewars.WesenImpl;
 
 import TPE_SS2014.UIB05.Racewars.Squad;
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Rasse;
 
 /**
  * Die Klasse Daemonenjaeger ist Subklasse von Nachtelf. Es gibt nur ein
@@ -12,7 +13,7 @@ import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
  * 
  */
 
-public class Daemonenjaeger extends Held {
+public class Daemonenjaeger extends HeldImpl {
 
 	private static Daemonenjaeger daemonenjaeger;
 
@@ -43,8 +44,8 @@ public class Daemonenjaeger extends Held {
 
 	public static void goldschuss(Squad s) {
 		for (Kaempfer k : s) {
-			if (k instanceof Wesen) {
-				Wesen wesen = ((Wesen) k);
+			if (k instanceof WesenImpl) {
+				WesenImpl wesen = ((WesenImpl) k);
 				wesen.setLebenspunkte(wesen.getLebenspunkte() - 25);
 			}
 		}

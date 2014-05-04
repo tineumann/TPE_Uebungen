@@ -34,7 +34,7 @@ public class WesenFactory {
 		}
 
 		while (geld > rasse.getKosten()) {
-			Wesen wesen;
+			WesenImpl wesen;
 			switch (rasse) {
 			case MENSCH:
 				wesen = new Mensch();

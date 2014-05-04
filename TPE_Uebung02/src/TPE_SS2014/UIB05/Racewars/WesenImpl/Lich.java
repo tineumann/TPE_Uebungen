@@ -2,6 +2,7 @@ package TPE_SS2014.UIB05.Racewars.WesenImpl;
 
 import TPE_SS2014.UIB05.Racewars.Squad;
 import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Rasse;
 
 /**
  * Die Klasse Lich ist Subklasse von Untoter. Es gibt nur ein einziges Objekt
@@ -12,7 +13,7 @@ import TPE_SS2014.UIB05.Racewars.WesenAPI.Kaempfer;
  * 
  */
 
-public class Lich extends Held {
+public class Lich extends HeldImpl {
 
 	// Lich bekommt das Element WASSER zugewiesen
 	private static Lich lich;
@@ -41,8 +42,8 @@ public class Lich extends Held {
 	public static void verwesung(Squad s) {
 		int anzahlGegner = 0;
 		for (Kaempfer gegner : s) {
-			if (gegner instanceof Wesen) {
-				Wesen wesen = ((Wesen) gegner);
+			if (gegner instanceof WesenImpl) {
+				WesenImpl wesen = ((WesenImpl) gegner);
 				wesen.setLebenspunkte(wesen.getLebenspunkte() - 7);
 				anzahlGegner++;
 			}

@@ -1,6 +1,7 @@
 package TPE_SS2014.UIB05.Racewars.WesenImpl;
 
 import TPE_SS2014.UIB05.Racewars.Squad;
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Rasse;
 
 /**
  * Farseer. Eine Subklasse von Ork. Es wird nur ein Objekt der Klasse Farseer
@@ -10,7 +11,7 @@ import TPE_SS2014.UIB05.Racewars.Squad;
  * @author Timo Neumann
  * 
  */
-public class Farseer extends Held {
+public class Farseer extends HeldImpl {
 
 	// Farseer bekommt das Element ERDE zugewiesen
 	private static Farseer farseer;

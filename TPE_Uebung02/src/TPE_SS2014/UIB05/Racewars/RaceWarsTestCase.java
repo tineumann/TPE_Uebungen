@@ -1,6 +1,10 @@
 package TPE_SS2014.UIB05.Racewars;
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
+import TPE_SS2014.UIB05.Racewars.WesenImpl.Mensch;
+import TPE_SS2014.UIB05.Racewars.WesenImpl.Untoter;
 
 
 	public class RaceWarsTestCase {
@@ -21,15 +25,6 @@ import org.junit.Test;
 		
 		@Test
 		public void testAttack(){
-			Mensch m1 = new Mensch();
-			Mensch m2 = new Mensch();
-			m1.attack(m2);
-			assertFalse(m2.isLebendig());
-			
-			Mensch m3 = new Mensch();
-			Untoter u1 = new Untoter();
-			m3.attack(u1);
-			assertTrue(440 == u1.getLebenspunkte());
 			
 		}
 	

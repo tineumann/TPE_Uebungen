@@ -1,5 +1,7 @@
 package TPE_SS2014.UIB05.Racewars.WesenImpl;
 
+import TPE_SS2014.UIB05.Racewars.WesenAPI.Rasse;
+
 
 /**
  * Die Klasse Erzmagier ist Subklasse von Mensch. Es gibt nur ein einziges
@@ -10,7 +12,7 @@ package TPE_SS2014.UIB05.Racewars.WesenImpl;
  *
  */
 
-public class Erzmagier extends Held {
+public class Erzmagier extends HeldImpl {
 	private static Erzmagier erzmagier = null;
 	private static boolean absorption = false;
 	
