@@ -52,7 +52,8 @@ public class RaceWarsTestCase {
 	 * @Test public void testAttack(){ Mensch m1 = new Mensch(); Nachtelf n1 =
 	 * new Nachtelf(); assertFalse(n1.isLebendig()); }
 	 */
-	@Test
+	
+	/*@Test
 	public void testisAbsorption() {
 		Kaempfer[] kaempfer1 = WesenFactory.kaufeOrk(300);
 		Kaempfer[] kaempfer2 = WesenFactory.kaufeMensch(300);
@@ -60,7 +61,14 @@ public class RaceWarsTestCase {
 		kaempfer1[0].attack(kaempfer2[0]);
 		assertEquals(700d,
 				Double.toString(((Wesen) kaempfer2[0]).getLebenspunkte()));
-
 	}
+	*/
+	@Test
+	public void testAttack(){
+		Ork o1 = new Ork();
+		Untoter u1 = new Untoter();
+		o1.attack(u1);
+		assertEquals(132.0d, (double)o1.getDamage(u1));
+		}
 
 }
