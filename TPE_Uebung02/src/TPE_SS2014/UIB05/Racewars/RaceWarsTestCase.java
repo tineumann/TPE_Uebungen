@@ -3,9 +3,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import TPE_SS2014.UIB05.Racewars.WesenImpl.Mensch;
-import TPE_SS2014.UIB05.Racewars.WesenImpl.Untoter;
-
+import TPE_SS2014.UIB05.Racewars.WesenImpl.*;
+import TPE_SS2014.UIB05.Racewars.WesenAPI.*;
 
 	public class RaceWarsTestCase {
 
@@ -24,8 +23,10 @@ import TPE_SS2014.UIB05.Racewars.WesenImpl.Untoter;
 		}
 		
 		@Test
-		public void testAttack(){
-			
+		public void testFactory(){
+			Kaempfer[] kaempfer1 = WesenFactory.kaufeMensch(330);			
+			assertEquals(kaempfer1.length, 2);			
+			assertEquals(true, kaempfer1[0] instanceof Erzmagier);
 		}
 	
 

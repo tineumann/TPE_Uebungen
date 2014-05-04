@@ -6,7 +6,7 @@ import TPE_SS2014.UIB05.Racewars.WesenImpl.*;
 
 public class WesenFactory {
 
-	private Kaempfer[] kaufeWesen(Rasse rasse, int geld) {
+	private static Kaempfer[] kaufeWesen(Rasse rasse, int geld) {
 
 		if (rasse == null)
 			return null;
@@ -18,22 +18,26 @@ public class WesenFactory {
 		switch (rasse) {
 		case MENSCH:
 			produzierteWesen.add(((Kaempfer) Erzmagier.getErzmagier()));
+			geld -= rasse.getKosten() * 2;
 			break;
 		case ORK:
 			produzierteWesen.add(((Kaempfer) Farseer.getFarseer()));
+			geld -= rasse.getKosten() * 2;
 			break;
 		case UNTOTER:
 			produzierteWesen.add(((Kaempfer) Lich.getLich()));
+			geld -= rasse.getKosten() * 2;
 			break;
 		case NACHTELF:
 			produzierteWesen
 					.add(((Kaempfer) Daemonenjaeger.getDaemonenjaeger()));
+			geld -= rasse.getKosten() * 2;
 			break;
 		default:
 			return null;
 		}
 
-		while (geld > rasse.getKosten()) {
+		while (geld >= rasse.getKosten()) {
 			WesenImpl wesen;
 			switch (rasse) {
 			case MENSCH:
@@ -61,19 +65,19 @@ public class WesenFactory {
 		return produzierteWesen.toArray(k);
 	}
 
-	public Kaempfer[] kaufeMensch(int geld) {
-		return this.kaufeWesen(Rasse.MENSCH, geld);
+	public static Kaempfer[] kaufeMensch(int geld) {
+		return kaufeWesen(Rasse.MENSCH, geld);
 	}
 
-	public Kaempfer[] kaufeOrk(int geld) {
-		return this.kaufeWesen(Rasse.ORK, geld);
+	public static Kaempfer[] kaufeOrk(int geld) {
+		return kaufeWesen(Rasse.ORK, geld);
 	}
 
-	public Kaempfer[] kaufeUntoter(int geld) {
-		return this.kaufeWesen(Rasse.UNTOTER, geld);
+	public static Kaempfer[] kaufeUntoter(int geld) {
+		return kaufeWesen(Rasse.UNTOTER, geld);
 	}
 
-	public Kaempfer[] kaufeNachtelf(int geld) {
-		return this.kaufeWesen(Rasse.NACHTELF, geld);
+	public static Kaempfer[] kaufeNachtelf(int geld) {
+		return kaufeWesen(Rasse.NACHTELF, geld);
 	}
 }
