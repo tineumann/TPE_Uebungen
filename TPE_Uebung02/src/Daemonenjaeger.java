@@ -7,7 +7,7 @@
  *
  */
 
-public class Daemonenjaeger extends Wesen {
+public class Daemonenjaeger extends Held {
 	
 	// Daemonenjaeger bekommt das Element LUFT zugewiesen
 	private Element element = Element.LUFT;
@@ -27,6 +27,7 @@ public class Daemonenjaeger extends Wesen {
 	
 	@Override
 	public void attack(Kaempfer r){
+		
 		
 	}
 	
