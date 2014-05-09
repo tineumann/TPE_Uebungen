@@ -47,4 +47,13 @@ public class RaceWarsTestCase {
 		Kaempfer[] kaempfer7 = WesenFactory.kaufeNachtelf(600);
 		assertEquals(3, kaempfer7.length);
 	}
+	
+	@Test
+	public void testAttack() {
+		Mensch m1 = new Mensch();
+		Ork o1 = new Ork();
+		m1.attack(o1);
+		assertTrue(-700.0 == o1.getLebenspunkte());
+	
+	}
 }

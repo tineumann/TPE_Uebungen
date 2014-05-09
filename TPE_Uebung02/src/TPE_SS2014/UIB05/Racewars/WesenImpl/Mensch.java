@@ -5,7 +5,8 @@ import TPE_SS2014.UIB05.Racewars.WesenAPI.Rasse;
 /**
  * Klasse Mensch stellt die Methode zur Schadensbeschränkung bereit.
  * 
- * @author timoneumann
+ * @author Timo Neumann, 1312143
+ * @author Constantin Schneider, 1315272
  * 
  */
 public class Mensch extends WesenImpl {
