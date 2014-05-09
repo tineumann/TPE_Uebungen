@@ -45,7 +45,7 @@ public abstract class WesenImpl implements Wesen, Kaempfer {
 				damage = getDamage(gegner) / (gegner.rasse.getRuestung() / 100);
 			}
 
-			gegner.setLebenspunkte(gegner.lebenspunkte - damage);
+			gegner.setLebenspunkte(gegner.getLebenspunkte() - damage);
 
 		}
 	}
@@ -53,7 +53,7 @@ public abstract class WesenImpl implements Wesen, Kaempfer {
 	/**
 	 * Errechnet den Schaden, den ein Wesen bei einem Angriff erzeugt.
 	 */
-	public double getDamage(WesenImpl r) {
+	public double getDamage(Wesen r) {
 		double damage = this.getRasse().getGeschwindigkeit()
 				* this.getRasse().getSchaden()
 				* this.getRasse().getSpezialattribut();

@@ -61,6 +61,8 @@ public class GameController {
 				if(s.squad.size() == 0)
 					this.spielBeendet = true;
 			}
+			
+			indexSpieler++;
 		}
 	}
 

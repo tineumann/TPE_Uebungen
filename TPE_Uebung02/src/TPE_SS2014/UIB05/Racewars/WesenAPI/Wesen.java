@@ -30,6 +30,7 @@ public interface Wesen {
 	 * @return double - Lebenspunkte
 	 */
 	public double getLebenspunkte();
+	
 
 	/**
 	 * Setzt die Anzahl der Lebenspunkte auf den gewünschten Wert.
