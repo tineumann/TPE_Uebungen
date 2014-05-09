@@ -16,13 +16,16 @@ public class GameViewer {
 	public static ArrayList<String> printgame(GameController gc){
 		ArrayList<String> messages = new ArrayList<String>();
 		messages.add("Zwischenstand nach Runde " + Integer.toString(gc.getRunde()));
+		messages.add("");
 		for(Spieler s : gc.getSpieler()){
 			messages.add("Squad " +  s.squad.getName());
+
 			for(Kaempfer k : s.squad){
 				if(k instanceof Wesen){
 					messages.add(((Wesen)k).toString());
 				}
 			}
+			messages.add("");
 		}
 		
 		if(gc.spielBeendet)

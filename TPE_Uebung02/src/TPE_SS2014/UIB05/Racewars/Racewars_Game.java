@@ -9,13 +9,12 @@ public class Racewars_Game {
 
 	public static void main(String[] args) {
 		Squad s1 = new Squad("Spieler1");
-		Kaempfer[] k_spieler1 = WesenFactory.kaufeMensch(2000);
+		Kaempfer[] k_spieler1 = WesenFactory.kaufeNachtelf(2000);
 		s1.add(k_spieler1);
 
 		Squad s2 = new Squad("Spieler2");
 		Kaempfer[] k_spieler2 = WesenFactory.kaufeOrk(2000);
 		s2.add(k_spieler2);
-		
 		
 		GameController gc = new GameController(new Spieler(s1), new Spieler(s2));
 		while (!gc.spielBeendet){
@@ -26,6 +25,8 @@ public class Racewars_Game {
 			for(String s : messages){
 				System.out.println(s);
 			}
+			
+			System.out.println();
 		}
 	}
 
