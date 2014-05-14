@@ -1,11 +1,13 @@
 package TPE_SS2014.UIB05.Uebung03;
 
 import java.util.ArrayList;
-
+//TODO: Timo
 public class Node<T> {
 	private String name;
 	private T value;
-	private ArrayList<Node<T>> children;
+	private ListImpl<Node<T>> children;
+	
+	public Node(){};
 	
 	public Node(String name, T value){
 		this.name = name;
@@ -16,9 +18,8 @@ public class Node<T> {
 		this.children.add(node);
 	}
 	
-	public T[] getChildren(){
-		T[] a = new T[children.size()];
-		return this.children.toArray(a);
+	public ListImpl<Node<T>> getChildren(){
+		return this.children;
 	}
 	
 	public String getName(){
