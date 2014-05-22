@@ -6,7 +6,7 @@ package TPE_SS2014.UIB05.Uebung03;
  * @param <T>
  *            Typ der gespeicherten Elemente.
  */
-public interface List<T> extends Iterable<T> {
+public interface List<T> extends Iterable<T>{
 	/**
 	 * ̈Uberpr ̈uft, ob ein Element bereits vorhanden ist. *
 	 * 
