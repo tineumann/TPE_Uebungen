@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Node<T> {
 	private String name;
 	private T value;
-	private ListImpl<Node<T>> children;
+	private NodeListImpl<T> children;
 	
 	public Node(){};
 	
@@ -18,7 +18,7 @@ public class Node<T> {
 		this.children.add(node);
 	}
 	
-	public ListImpl<Node<T>> getChildren(){
+	public NodeListImpl<T> getChildren(){
 		return this.children;
 	}
 	
