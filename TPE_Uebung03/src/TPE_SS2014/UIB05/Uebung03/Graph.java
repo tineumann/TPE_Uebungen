@@ -7,4 +7,8 @@ public class Graph<T> {
 	public Node<T> search(T value){
 		return (new Node<T>());
 	}
+	
+	public List<T> copyInto(List<T> list){
+		return list;
+	}
 }

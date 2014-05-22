@@ -43,7 +43,7 @@ public interface List<T> extends Iterable<T> {
 	/**
 	 * ̈Uberprüft, ob Elemente vorhanden sind.
 	 * 
-	 * @return true wenn die Datenstruktur leer ist, andernlass false
+	 * @return true wenn die Datenstruktur leer ist, andernfalls false
 	 */
 	public abstract boolean isEmpty();
 
