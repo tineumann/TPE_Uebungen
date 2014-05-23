@@ -1,6 +1,6 @@
 package TPE_SS2014.UIB05.Uebung03;
 
-//TODO: Timo
+
 public class Graph<T> {
 	private Node<T> root;
 
@@ -9,6 +9,16 @@ public class Graph<T> {
 	}
 
 	public List<T> copyInto(List<T> list){
-		
+		return copyInto(list, this.root);
+	}
+	
+	private List<T> copyInto(List<T> list, Node<T> node){
+		list.add(node.getValue());
+		for(Node<T> n : node.getChildren()){
+			if(n.hasChildren()){
+				return copyInto(list, n);
+			}
+		}
+		return list;
 	}
 }

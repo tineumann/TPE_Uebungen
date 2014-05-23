@@ -1,7 +1,5 @@
 package TPE_SS2014.UIB05.Uebung03;
 
-import java.util.ArrayList;
-//TODO: Timo
 public class Node<T> {
 	private String name;
 	private T value;
@@ -16,6 +14,12 @@ public class Node<T> {
 	
 	public void addChild(Node<T> node){
 		this.children.add(node);
+	}
+	
+	public boolean hasChildren(){
+		if(this.children.size() > 0)
+			return false;
+		else return true;
 	}
 	
 	public NodeListImpl<T> getChildren(){
