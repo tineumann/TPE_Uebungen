@@ -16,7 +16,6 @@ public class Graph<T> {
 		if(!list.contains(node.getValue())){
 			list.add(node.getValue());
 		}
-
 		for(Node<T> n : node.getChildren()){
 			if(n.hasChildren()){
 				return copyInto(list, n);
