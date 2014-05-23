@@ -13,12 +13,16 @@ public class Graph<T> {
 	}
 	
 	private List<T> copyInto(List<T> list, Node<T> node){
-		list.add(node.getValue());
+		if(!list.contains(node.getValue())){
+			list.add(node.getValue());
+		}
+
 		for(Node<T> n : node.getChildren()){
 			if(n.hasChildren()){
 				return copyInto(list, n);
 			}
 		}
+		
 		return list;
 	}
 }
