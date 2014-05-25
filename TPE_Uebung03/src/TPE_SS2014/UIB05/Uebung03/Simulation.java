@@ -17,11 +17,6 @@ public class Simulation {
 		Node<String> i = new Node<String>("I", "I");
 		Node<String> j = new Node<String>("J", "J");
 		Node<String> k = new Node<String>("K", "K");
-		Node<String> l = new Node<String>("L", "L");
-		Node<String> m = new Node<String>("M", "M");
-		Node<String> n = new Node<String>("N", "N");
-		Node<String> o = new Node<String>("O", "O");
-		Node<String> p = new Node<String>("P", "P");
 		
 		Graph<String> graph = new Graph<>(a);
 		
@@ -29,6 +24,7 @@ public class Simulation {
 		a.addChild(c);
 		a.addChild(d);
 		
+		b.addChild(a);
 		b.addChild(e);
 		b.addChild(f);
 		b.addChild(g);
@@ -39,19 +35,18 @@ public class Simulation {
 		f.addChild(j);
 		f.addChild(k);
 		
-		c.addChild(l);
-		c.addChild(m);
+		g.addChild(d);
 		
-		m.addChild(n);
+		j.addChild(i);
 		
-		d.addChild(o);
-		d.addChild(p);
+		k.addChild(d);
+		
 		
 		Tiefensuche<String> tiefensuche = new Tiefensuche<>();
 		Breitensuche<String> breitensuche = new Breitensuche<>();
 		
-		Node<String> tiefensuche_ergebnis = graph.search("P", tiefensuche);
-		Node<String> breitensuche_ergebnis = graph.search("N", breitensuche);
+		Node<String> tiefensuche_ergebnis = graph.search("K", tiefensuche);
+		Node<String> breitensuche_ergebnis = graph.search("K", breitensuche);
 		
 		ArrayList<Node<String>> tiefensuche_list = tiefensuche.getPath();
 		String tiefensuche_ausgabe = "[";
