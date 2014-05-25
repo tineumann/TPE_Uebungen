@@ -2,6 +2,12 @@ package TPE_SS2014.UIB05.Uebung03;
 
 import java.util.ArrayList;
 
+/** 
+ * simuliert Tiefen und Breitensuche (Aufgabe f)
+ * 
+ * @author Timo Neumann, 1312143
+ * @author Constantin Schneider, 1315272
+ */
 public class Simulation {
 
 	public static void main(String[] args) {

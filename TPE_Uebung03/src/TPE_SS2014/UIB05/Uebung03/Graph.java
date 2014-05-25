@@ -1,5 +1,7 @@
 package TPE_SS2014.UIB05.Uebung03;
 
+import java.util.ArrayList;
+
 /** 
  * Implementiert einen Graph
  * 
@@ -30,19 +32,27 @@ public class Graph<T> {
 	 * @return Liste mit allen Knoten
 	 */
 	public List<T> copyInto(List<T> list){
-		return copyInto(list, this.root);
-	}
-	
-	private List<T> copyInto(List<T> list, Node<T> node){
-		if(!list.contains(node.getValue())){
-			list.add(node.getValue());
-		}
-		for(Node<T> n : node.getChildren()){
-			if(n.hasChildren()){
-				return copyInto(list, n);
+		ArrayList<Node<T>> path = new ArrayList<>();
+		NodeListImpl<T> queue = new NodeListImpl<>();
+		
+		path.add(root);
+		list.add(root.getValue());
+		queue.addFirst(root);
+		
+		while(!queue.isEmpty()){
+			Node<T> node = queue.removeFirst();
+
+			for(Node<T> n : node.getChildren()){
+				if(!path.contains(n)){
+					path.add(n);
+					queue.add(n);
+					list.add(n.getValue());
+				}
 			}
 		}
 		
 		return list;
 	}
+	
+
 }

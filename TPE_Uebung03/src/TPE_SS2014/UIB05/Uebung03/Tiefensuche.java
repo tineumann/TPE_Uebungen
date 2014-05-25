@@ -12,28 +12,32 @@ import java.util.ArrayList;
 public class Tiefensuche<T> implements SearchStrategy<T> {
 
 	private ArrayList<Node<T>> path = new ArrayList<>();
-	private Node<T> foundNode;
-	
+	Node<T> foundNode;
 	/**
 	 * Sucht den gewünschten Knoten.
 	 * @return gesuchten Knoten - wenn nicht gefunden, dann null.
 	 */
 	@Override
 	public Node<T> search(T value, Node<T> root) {
-		if (!path.contains(root)) {
-			this.path.add(root);
-
-			if (root.getValue().equals(value)) {
-				foundNode = root;
-			} else {
-				if (root.hasChildren()) {
-					for (Node<T> n : root.getChildren()) {
-						foundNode = search(value, n);
-					}
-				}
+		path.clear();
+		foundNode = null;
+		return searchRek(value, root);
+	}
+	
+	public Node<T> searchRek(T value, Node<T> root){
+		if(!path.contains(root)){
+			path.add(root);
+		}
+		if(root.getValue().equals(value)){
+			this.foundNode = root;
+			return this.foundNode;
+		}
+		for(Node<T> n : root.getChildren()){
+			if(!this.path.contains(n)){
+				searchRek(value, n);
 			}
 		}
-
+		
 		return foundNode;
 	}
 	

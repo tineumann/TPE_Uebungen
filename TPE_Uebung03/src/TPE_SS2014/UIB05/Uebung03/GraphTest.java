@@ -6,6 +6,13 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+/** 
+ * Testet Graph.
+ * 
+ * @author Timo Neumann, 1312143
+ * @author Constantin Schneider, 1315272
+ * @param <T>
+ */
 public class GraphTest {
 
 	@Test
@@ -132,6 +139,29 @@ public class GraphTest {
 		System.out.println("Ergebnis: " + suche_ergebnis.getName());
 		
 		assertEquals("[A,B,C,D,E,F,G,L,M,O,P,H,I,J,K,N,]", suche_ausgabe);
+	}
+	
+	@Test
+	public void testCopyInto(){
+		Node<String> a = new Node<String>("A", "A");
+		Node<String> b = new Node<String>("B", "B");
+		Node<String> c = new Node<String>("C", "C");
+		
+		Graph<String> graph = new Graph<>(a);
+		
+		a.addChild(b);
+		a.addChild(c);
+		b.addChild(a);
+
+		
+		List<String> list = new ListImpl<String>();
+		graph.copyInto(list);
+		
+		assertEquals(true, list.contains(a.getValue()));
+		assertEquals(true, list.contains(b.getValue()));
+		assertEquals(true, list.contains(c.getValue()));
+
+		
 	}
 
 }

@@ -20,26 +20,27 @@ public class Breitensuche<T> implements SearchStrategy<T> {
 	 */
 	@Override
 	public Node<T> search(T value, Node<T> root) {
-		if(!path.contains(root))
-			path.add(root);
+		this.path.clear();
 		
-		if(root.hasChildren()){
-			for(Node<T> n : root.getChildren()){
+		NodeListImpl<T> queue = new NodeListImpl<>();
+		
+		path.add(root);
+		queue.addFirst(root);
+		
+		while(!queue.isEmpty()){
+			Node<T> node = queue.removeFirst();
+			if(node.getValue().equals(value)){
+				foundNode = node;
+				return foundNode;
+			}
+
+			for(Node<T> n : node.getChildren()){
 				if(!path.contains(n)){
 					path.add(n);
+					queue.add(n);
 				}
-				
-				if(n.getValue().equals(value)){
-					foundNode = n;
-					return foundNode;
-				}
-			}
-			
-			for(Node<T> n : root.getChildren()){
-				return search(value, n);
 			}
 		}
-		
 
 		return foundNode;
 	}
