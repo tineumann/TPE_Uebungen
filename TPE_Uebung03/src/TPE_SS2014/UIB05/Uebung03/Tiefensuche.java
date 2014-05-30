@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Tiefensuche<T> implements SearchStrategy<T> {
 
 	private ArrayList<Node<T>> path = new ArrayList<>();
-	Node<T> foundNode;
+	private Node<T> foundNode;
 	/**
 	 * Sucht den gewünschten Knoten.
 	 * @return gesuchten Knoten - wenn nicht gefunden, dann null.
@@ -33,9 +33,8 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 			return this.foundNode;
 		}
 		for(Node<T> n : root.getChildren()){
-			if(!this.path.contains(n)){
+
 				searchRek(value, n);
-			}
 		}
 		
 		return foundNode;
