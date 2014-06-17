@@ -6,7 +6,7 @@ import java.util.*;
  * Jeder Saal hat einen Namen und eine feste Anzahl an Sitzplätzen.
  * 
  * @author Constantin Schneider, 1315272
- * @author Timo Neumann
+ * @author Timo Neumann, 1312143
  *
  */
 
@@ -16,10 +16,10 @@ public class Saal {
 	private final int anzahlSitze;
 	private LinkedList<Film> programm;
 	
-	public Saal(String name, int anzahlSitze /*LinkedList<Film> programm*/){
+	public Saal(String name, int anzahlSitze, LinkedList<Film> programm){
 		this.name = name;
 		this.anzahlSitze = anzahlSitze;
-		/*this.programm = programm;*/
+		this.programm = programm;
 	}
 	
 	/**
@@ -37,5 +37,17 @@ public class Saal {
 	public int getAnzahlSitze(){
 		return anzahlSitze;
 	}
-
+	
+	public LinkedList<Film> getProgramm(){
+		return this.programm;
+	}
+	
+	public void filmHinzufuegen(String name, int laufzeit, Altersfreigabe altersfreigabe, Zeit zeit){
+		this.programm.add(new Film(name, laufzeit, altersfreigabe, zeit));
+	}
+	
+	public String toString(){
+		return "Saal" + "'" + this.name + "'" + "(" + this.anzahlSitze + "Plaetze" + ")";
+		
+	}
 }

@@ -3,7 +3,7 @@ package TPE_SS2014.UIB05.Uebung04.Kinoprogramm;
  * Aufzählung der Altersfreigaben
  * 
  * @author Constantin Schneider, 1315272
- * @author Timo Neumann
+ * @author Timo Neumann, 1312143
  *
  */
 
@@ -11,16 +11,16 @@ public enum Altersfreigabe {
 	OHNEALTERSBESCHRAENKUNG, ABSECHSJAHRE, ABZWOELFJAHRE, ABSECHSZEHNJAHRE,
 	OHNEJUGENDFREIGABE;
 
-	public String toString(Object o){
-		if(o.equals(OHNEALTERSBESCHRAENKUNG))
+	public String toString(Altersfreigabe altersfreigabe){
+		if(altersfreigabe.equals(OHNEALTERSBESCHRAENKUNG))
 			return "ohne Altersbeschränkung";
-		else if(o.equals(ABSECHSJAHRE))
+		else if(altersfreigabe.equals(ABSECHSJAHRE))
 			return "ab 6 Jahre";
-		else if(o.equals(ABZWOELFJAHRE))
+		else if(altersfreigabe.equals(ABZWOELFJAHRE))
 			return "ab 12 Jahre";
-		else if(o.equals(ABSECHSZEHNJAHRE))
+		else if(altersfreigabe.equals(ABSECHSZEHNJAHRE))
 			return "ab 16 Jahre";
-		else if(o.equals(OHNEJUGENDFREIGABE))
+		else if(altersfreigabe.equals(OHNEJUGENDFREIGABE))
 			return "ohne Jugendfreigabe";
 		else
 			return null;
