@@ -3,8 +3,9 @@ package TPE_SS2014.UIB05.Uebung04.Kinoprogramm;
 import java.util.*;
 
 /**
- * Simuliert ein Kino Jedes Kino hat einen Namen, liegt in einer Stadt und
- * besitzt einen oder mehrere Säle.
+ * Simuliert ein Kino. 
+ * Jedes Kino hat einen Namen, liegt in einer Stadt und besitzt einen
+ * oder mehrere Säle.
  * 
  * @author Constantin Schneider, 1315272
  * @author Timo Neumann, 1312143
@@ -20,11 +21,9 @@ public class Kino{
 	/**
 	 * Konstruktor
 	 * 
-	 * @param name
-	 *            - Kinoname
-	 * @param stadt
-	 *            - Ort des Kinos
-	 * @param saele
+	 * @param name - Kinoname
+	 * @param stadt - Ort des Kinos
+	 * @param saele - Liste aller Saele
 	 */
 	public Kino(String name, String stadt, LinkedList<Saal> saele) {
 		this.name = name;
@@ -49,7 +48,8 @@ public class Kino{
 	}
 	
 	/**
-	 * Methode um 
+	 * Methode um alle Filme eines Saals geordnet nach den Anfagnszeiten
+	 * auszugeben 
 	 * 
 	 * @param s - bestimmter Saal aus dem Kino
 	 * @return filmliste - Liste aller Filmtitel
@@ -95,8 +95,8 @@ public class Kino{
 	}
 	
 	/**
-	 * Auslesen aller Filme mit ihren Anfangszeiten als Array sortiert nach
-	 * der Anfangszeit.
+	 * Auslesen aller Filme im gesamten Kini mit ihren Anfangszeiten als
+	 * Array sortiert nach der Anfangszeit.
 	 * 
 	 * @return
 	 */

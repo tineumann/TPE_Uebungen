@@ -11,14 +11,23 @@ import java.text.*;
  */
 
 public class Zeit {
+	
 	private int stunden;
 	private int minuten;
+	
 	/**
 	 * Format als Konstante definiert HH:MM
 	 */
 	public static final SimpleDateFormat zeitformat = new SimpleDateFormat(
 			"HH:mm");
-
+	
+	/**
+	 * Konstruktor
+	 * 
+	 * @param zeit - Zeit als String im Format HH:MM
+	 * @throws IllegalTimeException - ungueltige Zeit
+	 * @throws NumberFormatException
+	 */
 	public Zeit(String zeit) throws IllegalTimeException, NumberFormatException 
 	{
 		try {

@@ -3,6 +3,12 @@ package TPE_SS2014.UIB05.Uebung04.Kinoprogramm;
 import java.util.Collections;
 import java.util.LinkedList;
 
+/**
+ * Simuliert ein Kino als Beispiel.
+ * 
+ * @author Constantin Schneider, 1315272
+ * @author Timo Neumann, 1312143
+ */
 public class KinoBeispiel {
 	
 	
@@ -20,7 +26,7 @@ public class KinoBeispiel {
 		kino1.getSaele().peek().filmHinzufuegen("Batman Begins", 134, Altersfreigabe.ABZWOELFJAHRE, new Zeit("23:00"));
 		
 		
-		kino1.getSaele().peek().filmHinzufuegen("Barbie - Die Prinzessinnen-Akademie", 81, Altersfreigabe.OHNEALTERSBESCHRAENKUNG, new Zeit("15:00"));
+		/*kino1.getSaele().peek().filmHinzufuegen("Barbie - Die Prinzessinnen-Akademie", 81, Altersfreigabe.OHNEALTERSBESCHRAENKUNG, new Zeit("15:00"));
 		kino1.getSaele().peek().filmHinzufuegen("Ice Age 3", 90, Altersfreigabe.OHNEALTERSBESCHRAENKUNG, new Zeit("17:00"));
 		kino1.getSaele().peek().filmHinzufuegen("Ice Age 3", 90, Altersfreigabe.OHNEALTERSBESCHRAENKUNG, new Zeit("19:00"));
 		/*kino1.getSaele().peek().filmHinzufuegen("Machete", 100, Altersfreigabe.OHNEJUGENDFREIGABE, new Zeit("21:00"));*/
