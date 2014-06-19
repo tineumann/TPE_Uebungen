@@ -9,7 +9,8 @@ public class Collatz{
 	public Collatz(int startwert){
 		this.startwert = startwert;
 		int aktuellerWert = this.startwert;
-		while(startwert != 1){
+		zahlen.add(this.startwert);
+		while(aktuellerWert != 1){
 			if(aktuellerWert % 2 == 0){
 				aktuellerWert /= 2;
 			} else {
@@ -18,5 +19,13 @@ public class Collatz{
 			
 			zahlen.add(aktuellerWert);
 		}
+	}
+	
+	public int getStartwert(){
+		return this.startwert;
+	}
+
+	public int size(){
+		return this.zahlen.size();
 	}
 }
