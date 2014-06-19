@@ -4,9 +4,10 @@ public class CollatzSim {
 
 	public static void main(String[] args) {
 		collatzMultiThread();
+		collatzSingleThread();
 	}
-	
-	public static void collatzMultiThread(){
+
+	public static void collatzMultiThread() {
 		CollatzThread ct = new CollatzThread();
 
 		Thread t1 = new Thread(ct);
@@ -19,29 +20,37 @@ public class CollatzSim {
 		t3.start();
 		t4.start();
 
-		System.out.println("Laengste Folge:" + "(Laenge:"
-				+ ct.getLaengsteFolge().size() + "; Startwert: "
-				+ ct.getLaengsteFolge().getStartwert() + ")");
-		System.out.println(ct.getLaengsteFolge().toString());
-	}
-	
-	public static void collatzSingleThread(){
-		long startwert = 2;
-		Collatz laengste = new Collatz(1);
-		
-		while(startwert <= 1000000){
-			Collatz c = new Collatz(startwert);
-			
-			if(c.size() > laengste.size()){
-				laengste = c;
-			}
-			
-			startwert++;
+		try {
+			t1.join();
+			t2.join();
+			t3.join();
+			t4.join();
+		} catch (InterruptedException e) {
+			System.out.println("Thread wurde unterbrochen.");
 		}
 		
 		System.out.println("Laengste Folge:" + "(Laenge:"
-				+ laengste.size() + "; Startwert: "
-				+ laengste.getStartwert() + ")");
+					+ CollatzThread.getLaengsteFolge().size() + "; Startwert: "
+					+ CollatzThread.getLaengsteFolge().getStartwert() + ")");
+			System.out.println(CollatzThread.getLaengsteFolge().toString());
+	}
+
+	public static void collatzSingleThread() {
+		long startwert = 2;
+		Collatz laengste = new Collatz(1);
+
+		while (startwert <= 1000000) {
+			Collatz c = new Collatz(startwert);
+
+			if (c.size() > laengste.size()) {
+				laengste = c;
+			}
+
+			startwert++;
+		}
+
+		System.out.println("Laengste Folge:" + "(Laenge:" + laengste.size()
+				+ "; Startwert: " + laengste.getStartwert() + ")");
 		System.out.println(laengste.toString());
 	}
 }

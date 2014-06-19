@@ -10,9 +10,9 @@ public class CollatzThread implements Runnable {
 	public void run() {
 		while(getStartwert() < 1000000){
 			Collatz c = new Collatz(this.getStartwert());
-			
-			if(c.size() > this.getLaengsteFolge().size()){
-				this.setLaengsteFolge(c);
+			System.out.println(c.toString());
+			if(c.size() > getLaengsteFolge().size()){
+				setLaengsteFolge(c);
 			}
 			
 			this.erhoeheStartwert();
@@ -20,11 +20,11 @@ public class CollatzThread implements Runnable {
 
 	}
 
-	public synchronized Collatz getLaengsteFolge(){
+	public static synchronized Collatz getLaengsteFolge(){
 		return laengsteFolge;
 	}
 	
-	public synchronized void setLaengsteFolge(Collatz c){
+	public static synchronized void setLaengsteFolge(Collatz c){
 		laengsteFolge = c;
 	}
 	
