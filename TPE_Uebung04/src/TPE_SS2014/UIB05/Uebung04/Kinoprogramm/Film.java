@@ -72,7 +72,7 @@ public class Film {
 	 */
 	public String toString() {
 		return this.titel + "["
-				+ this.altersfreigabe.toString(this.altersfreigabe) + "] "
+				+ this.altersfreigabe.toString() + "] "
 				+ this.laufzeit + "min";
 	}
 }

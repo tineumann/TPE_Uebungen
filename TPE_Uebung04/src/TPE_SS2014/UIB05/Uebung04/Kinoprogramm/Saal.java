@@ -11,11 +11,11 @@ import java.util.*;
  * 
  */
 
-public class Saal {
+public class Saal extends LinkedList<Vorstellung>{
 
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private final int anzahlSitze;
-	private HashMap<Zeit, Film> programm;
 
 	/**
 	 * Konstruktor
@@ -27,10 +27,10 @@ public class Saal {
 	 * @param programm
 	 *            - Liste des Filmprogramms
 	 */
-	public Saal(String name, int anzahlSitze, HashMap<Zeit, Film> programm) {
+	public Saal(String name, int anzahlSitze, LinkedList<Vorstellung> programm) {
 		this.name = name;
 		this.anzahlSitze = anzahlSitze;
-		this.programm = programm;
+		this.addAll(programm);
 	}
 
 	/**
@@ -52,15 +52,6 @@ public class Saal {
 	}
 
 	/**
-	 * get-Methode für das gesamte Programm
-	 * 
-	 * @return programm - Filmprogramm des Saals
-	 */
-	public HashMap<Zeit, Film> getProgramm() {
-		return this.programm;
-	}
-
-	/**
 	 * Methode um dem Filmprogramm einen Film hinzuzufuegen
 	 * 
 	 * @param name
@@ -71,24 +62,13 @@ public class Saal {
 	 *            - Altersfreigabe aus Enum Altersfreigabe
 	 * @param zeit
 	 *            - Startzeit des Films als Zeit
-	 */
+	 */	
 	public void filmHinzufuegen(Zeit zeit, Film film) {
-		this.programm.put(zeit, film);
+		this.add(new Vorstellung(zeit, film));
 	}
-
-	/**
-	 * toString-Methode der Klasse Saal Ausgegeben wird der Saalname sowie die
-	 * Anzahl der Sitzplaetze des Saals
-	 */
+	
 	@Override
-	public String toString() {
-		String s = "Saal" + "'" + this.name + "'" + "(" + this.anzahlSitze
-				+ "Plaetze" + ")\n";
-		
-		for (Film f : this.programm){
-			s += f.toString() + "\n";
-		}
-		
-		return s;
+	public String toString(){
+		return "Saal '" + this.getName() + "' (" + this.getAnzahlSitze() + "Plaetze)";
 	}
 }

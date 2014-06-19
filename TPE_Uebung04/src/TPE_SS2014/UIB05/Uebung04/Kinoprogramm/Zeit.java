@@ -13,6 +13,14 @@ import java.text.*;
 public class Zeit {
 	
 	private int stunden;
+	public int getStunden() {
+		return stunden;
+	}
+
+	public int getMinuten() {
+		return minuten;
+	}
+
 	private int minuten;
 	
 	/**
@@ -60,7 +68,12 @@ public class Zeit {
 
 	@Override
 	public String toString() {
-		return Integer.toString(stunden) + ":" + Integer.toString(minuten);
+		String zeit = Integer.toString(stunden) + ":";
+		if(this.minuten < 10){
+			zeit += "0" + Integer.toString(this.minuten);
+		}
+		
+		return zeit;
 	}
 
 }

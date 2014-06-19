@@ -19,18 +19,33 @@ public enum Altersfreigabe {
 	 * @param altersfreigabe - die verschiedenen Altersfreigaben
 	 * @return String: Bezeichner der Altersfreigaben mit Leerzeichen 
 	 */
-	public String toString(Altersfreigabe altersfreigabe){
-		if(altersfreigabe.equals(OHNEALTERSBESCHRAENKUNG))
+	public String toString(){
+		if(this.equals(OHNEALTERSBESCHRAENKUNG))
 			return "ohne Altersbeschränkung";
-		else if(altersfreigabe.equals(ABSECHSJAHRE))
+		else if(this.equals(ABSECHSJAHRE))
 			return "ab 6 Jahre";
-		else if(altersfreigabe.equals(ABZWOELFJAHRE))
+		else if(this.equals(ABZWOELFJAHRE))
 			return "ab 12 Jahre";
-		else if(altersfreigabe.equals(ABSECHSZEHNJAHRE))
+		else if(this.equals(ABSECHSZEHNJAHRE))
 			return "ab 16 Jahre";
-		else if(altersfreigabe.equals(OHNEJUGENDFREIGABE))
+		else if(this.equals(OHNEJUGENDFREIGABE))
 			return "ohne Jugendfreigabe";
 		else
 			return null;
+	}
+	
+	public int getWert(){
+		if(this.equals(OHNEALTERSBESCHRAENKUNG))
+			return 0;
+		else if(this.equals(ABSECHSJAHRE))
+			return 1;
+		else if(this.equals(ABZWOELFJAHRE))
+			return 2;
+		else if(this.equals(ABSECHSZEHNJAHRE))
+			return 3;
+		else if(this.equals(OHNEJUGENDFREIGABE))
+			return 4;
+		else
+			return 0;
 	}
 }

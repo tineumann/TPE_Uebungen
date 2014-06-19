@@ -2,6 +2,8 @@ package TPE_SS2014.UIB05.Uebung04.Kinoprogramm;
 
 import java.util.*;
 
+import TPE_SS2014.UIB05.Uebung04.Kinoprogramm.Comparator.*;
+
 /**
  * Simuliert ein Kino. Jedes Kino hat einen Namen, liegt in einer Stadt und
  * besitzt einen oder mehrere Säle.
@@ -11,11 +13,11 @@ import java.util.*;
  * 
  */
 
-public class Kino {
+public class Kino extends LinkedList<Saal>{
 
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private String stadt;
-	private LinkedList<Saal> saele;
 
 	/**
 	 * Konstruktor
@@ -30,7 +32,7 @@ public class Kino {
 	public Kino(String name, String stadt, LinkedList<Saal> saele) {
 		this.name = name;
 		this.stadt = stadt;
-		this.saele = saele;
+		this.addAll(saele);
 	}
 
 	/**
@@ -44,12 +46,12 @@ public class Kino {
 	 *            - Liste aller Filme
 	 */
 	public void saeleHinzufuegen(String name, int anzahlSitze,
-			HashMap<Zeit, Film> programm) {
-		this.saele.add(new Saal(name, anzahlSitze, programm));
+			LinkedList<Vorstellung> programm) {
+		this.add(new Saal(name, anzahlSitze, programm));
 	}
 
 	public void saeleHinzufuegen(Saal saal) {
-		this.saele.add(saal);
+		this.add(saal);
 	}
 
 	/**
@@ -60,19 +62,17 @@ public class Kino {
 	 *            - bestimmter Saal aus dem Kino
 	 * @return filmliste - Liste aller Filmtitel
 	 */
-
 	public String[] getFilmeFuerSaalMitZeiten(Saal s) {
 		ArrayList<String> filme = new ArrayList<>();
-
-		for (Film f : s.getProgramm()) {
-			if (!filme.contains(f.getTitel())) {
-				filme.add(f.getTitel());
-			}
+		for(Vorstellung v : s){
+			filme.add(v.toString());
 		}
-
-		String[] filmliste = new String[filme.size()];
-		filme.toArray(filmliste);
-		return filmliste;
+		
+		Collections.sort(filme, new StringComparator());
+		
+		String[] filmeString = new String[filme.size()];
+		filme.toArray(filmeString);
+		return filmeString;
 	}
 
 	/**
@@ -81,40 +81,45 @@ public class Kino {
 	 * 
 	 * @return filme - alle Filme im Kino
 	 */
-	public String[] getAlleFilme() {
+	public Film[] getAlleFilme() {
+		return getAlleFilme(Sortierkriterium.NAME);
+	}
 
-		ArrayList<String> filmliste = new ArrayList<>();
+	public Film[] getAlleFilme(Sortierkriterium kriterium){
+		ArrayList<Film> filmliste = new ArrayList<>();
 
-		for (Saal s : this.saele) {
-			for (Film f : s.getProgramm()) {
-				if (!filmliste.contains(f.getTitel())) {
-					filmliste.add(f.getTitel());
+		for (Saal s : this) {
+			for (Vorstellung v : s) {
+				if (!filmliste.contains(v.getFilm())) {
+					filmliste.add(v.getFilm());
 				}
 			}
 		}
-
-		String[] filme = new String[filmliste.size()];
+		
+		Collections.sort(filmliste, kriterium.getComparator());
+		
+		Film[] filme = new Film[filmliste.size()];
 		filmliste.toArray(filme);
 		java.util.Arrays.sort(filme);
 		return filme;
 	}
-
+	
 	/**
-	 * Auslesen aller Filme im gesamten Kini mit ihren Anfangszeiten als Array
+	 * Auslesen aller Filme im gesamten Kino mit ihren Anfangszeiten als Array
 	 * sortiert nach der Anfangszeit.
 	 * 
 	 * @return
 	 */
-	public String[] getAlleFilmeMitZeiten() {
-		ArrayList<Film> filmliste = new ArrayList<>();
-		for (Saal s : this.saele) {
-			for (Film f : s.getProgramm().values()) {
-				if (!filmliste.contains(f))
-					filmliste.add(f);
-						
+	public Vorstellung[] getAlleFilmeMitZeiten() {
+		ArrayList<Vorstellung> filmliste = new ArrayList<>();
+		for (Saal s : this) {
+			for (Vorstellung v : s) {
+					filmliste.add(v);
 			}
 		}
-		Film[] filme = new Film[filmliste.size()];
+		
+		Collections.sort(filmliste, new ZeitComparator());
+		Vorstellung[] filme = new Vorstellung[filmliste.size()];
 		filmliste.toArray(filme);
 		return filme;
 	}
@@ -143,7 +148,7 @@ public class Kino {
 	 * @return saele - Liste aller Saele
 	 */
 	public LinkedList<Saal> getSaele() {
-		return this.saele;
+		return this;
 	}
 
 	/**
@@ -151,11 +156,16 @@ public class Kino {
 	 */
 	public String toString() {
 		String s = this.name + " in " + this.stadt + "\n";
-		
-		for(Saal saal : this.saele){
-			s += saal.toString();
+
+		for (Saal saal : this) {
+			s += saal.toString() + "\n";
+			String[] filme = getFilmeFuerSaalMitZeiten(saal);
+			for(String film : filme){
+				s += film + "\n";
+			}
+			s+="\n";
 		}
-		
+
 		return s;
 	}
 
