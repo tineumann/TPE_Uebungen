@@ -3,7 +3,7 @@ package TPE_SS2014.UIB05.Uebung04.CollatzFolge;
 public class CollatzSim {
 
 	public static void main(String[] args) {
-		collatzSingleThread();
+		collatzMultiThread();
 	}
 	
 	public static void collatzMultiThread(){

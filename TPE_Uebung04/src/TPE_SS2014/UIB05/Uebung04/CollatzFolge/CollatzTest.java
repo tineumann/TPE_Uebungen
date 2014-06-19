@@ -11,7 +11,7 @@ public class CollatzTest {
 	@Test
 	public void test() {
 		LinkedList<Integer> list = new LinkedList<>();
-		//13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+		// 13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
 		list.add(13);
 		list.add(40);
 		list.add(20);
@@ -22,11 +22,9 @@ public class CollatzTest {
 		list.add(4);
 		list.add(2);
 		list.add(1);
-		
+
 		Collatz c = new Collatz(13);
 		assertEquals(list, c);
 	}
-	
-	
 
 }
