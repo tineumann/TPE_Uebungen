@@ -11,8 +11,9 @@ import java.text.*;
  */
 
 public class Zeit {
-	
+
 	private int stunden;
+
 	public int getStunden() {
 		return stunden;
 	}
@@ -22,22 +23,32 @@ public class Zeit {
 	}
 
 	private int minuten;
-	
+
 	/**
 	 * Format als Konstante definiert HH:MM
 	 */
 	public static final SimpleDateFormat zeitformat = new SimpleDateFormat(
 			"HH:mm");
-	
+
 	/**
 	 * Konstruktor
 	 * 
-	 * @param zeit - Zeit als String im Format HH:MM
-	 * @throws IllegalTimeException - ungueltige Zeit
+	 * @param zeit
+	 *            - Zeit als String im Format HH:MM
+	 * @throws IllegalTimeException
+	 *             - ungueltige Zeit
 	 * @throws NumberFormatException
 	 */
-	public Zeit(String zeit) throws IllegalTimeException, NumberFormatException 
-	{
+	public Zeit(String zeit) throws IllegalTimeException, NumberFormatException {
+		if (this.stunden > 24 || this.stunden < 0) {
+			IllegalTimeException ite = new IllegalTimeException();
+			throw ite;
+		}
+		if (minuten > 59 || minuten < 0) {
+			IllegalTimeException ite = new IllegalTimeException();
+			throw ite;
+		}
+
 		try {
 			String[] zeitString = zeit.split("\\:");
 			this.stunden = Integer.parseInt(zeitString[0]);
@@ -47,14 +58,6 @@ public class Zeit {
 			throw nfe;
 		}
 
-		if (this.stunden > 24 || this.stunden < 0) {
-			IllegalTimeException ite = new IllegalTimeException();
-			throw ite;
-		}
-		if (minuten > 59 || minuten < 0) {
-			IllegalTimeException ite = new IllegalTimeException();
-			throw ite;
-		}
 	}
 
 	/**
@@ -69,10 +72,10 @@ public class Zeit {
 	@Override
 	public String toString() {
 		String zeit = Integer.toString(stunden) + ":";
-		if(this.minuten < 10){
+		if (this.minuten < 10) {
 			zeit += "0" + Integer.toString(this.minuten);
 		}
-		
+
 		return zeit;
 	}
 
