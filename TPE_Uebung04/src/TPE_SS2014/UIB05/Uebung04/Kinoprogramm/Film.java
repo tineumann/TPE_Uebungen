@@ -87,7 +87,8 @@ public class Film implements Comparable<Film> {
 	}
 		return null;
 	}
-
+	
+	/*
 	@Override
 	public int compareTo(Film f) {
 		if(f.getStartzeit() == null && f.getStartzeit() == null){
@@ -100,7 +101,7 @@ public class Film implements Comparable<Film> {
 			return -1;
 		}
 		return this.getStartzeit().compareTo(f.getStartzeit());
-	}
+	}*/
 
 }
 

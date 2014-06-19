@@ -1,21 +1,22 @@
 package TPE_SS2014.UIB05.Uebung04.CollatzFolge;
 
-public class Collatz {
-	
+import java.util.ArrayList;
+
+public class Collatz{
+
 	private int startwert;
-	
+	public ArrayList<Integer> zahlen = new ArrayList<>();
 	public Collatz(int startwert){
 		this.startwert = startwert;
-	}
-
-	public int getStartwert(){
-		return this.startwert;
-	}
-	
-	public int berechne(int startwert){
-		for(int i: this){
+		int aktuellerWert = this.startwert;
+		while(startwert != 1){
+			if(aktuellerWert % 2 == 0){
+				aktuellerWert /= 2;
+			} else {
+				aktuellerWert = aktuellerWert * 3 + 1;
+			}
 			
+			zahlen.add(aktuellerWert);
 		}
-	
 	}
 }
