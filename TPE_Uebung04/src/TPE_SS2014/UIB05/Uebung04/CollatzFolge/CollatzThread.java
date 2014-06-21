@@ -13,7 +13,7 @@ public class CollatzThread implements Runnable {
 
 	@Override
 	public void run() {
-		while (getStartwert() < endwert) {
+		while (getStartwert() <= endwert) {
 			if (getStartwert() % 3 != 0) {
 				Collatz c = new Collatz(this.getStartwert());
 				// System.out.println(c.toString());

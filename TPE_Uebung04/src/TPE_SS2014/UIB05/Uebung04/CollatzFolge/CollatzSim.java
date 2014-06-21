@@ -8,7 +8,7 @@ public class CollatzSim {
 	}
 
 	public static void collatzMultiThread() {
-		CollatzThread ct = new CollatzThread(100000000);
+		CollatzThread ct = new CollatzThread(1000000000);
 
 		Thread t1 = new Thread(ct);
 		Thread t2 = new Thread(ct);
