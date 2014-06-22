@@ -4,7 +4,7 @@ public class CollatzSim {
 
 	public static void main(String[] args) {
 		collatzMultiThread();
-		collatzSingleThread();
+		//collatzSingleThread();
 	}
 
 	public static void collatzMultiThread() {
@@ -14,17 +14,29 @@ public class CollatzSim {
 		Thread t2 = new Thread(ct);
 		Thread t3 = new Thread(ct);
 		Thread t4 = new Thread(ct);
+		Thread t5 = new Thread(ct);
+		Thread t6 = new Thread(ct);
+		Thread t7 = new Thread(ct);
+		Thread t8 = new Thread(ct);
 
 		t1.start();
 		t2.start();
 		t3.start();
 		t4.start();
-
+		t5.start();
+		t6.start();
+		t7.start();
+		t8.start();
+		
 		try {
 			t1.join();
 			t2.join();
 			t3.join();
 			t4.join();
+			t5.join();
+			t6.join();
+			t7.join();
+			t8.join();
 		} catch (InterruptedException e) {
 			System.out.println("Thread wurde unterbrochen.");
 		}
