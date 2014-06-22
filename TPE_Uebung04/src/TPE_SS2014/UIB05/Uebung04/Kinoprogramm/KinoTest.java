@@ -2,7 +2,13 @@ package TPE_SS2014.UIB05.Uebung04.Kinoprogramm;
 
 import static org.junit.Assert.*;
 
+import java.util.Collections;
+import java.util.LinkedList;
+
 import org.junit.Test;
+
+import TPE_SS2014.UIB05.Uebung04.Kinoprogramm.Comparator.TitelComparator;
+import TPE_SS2014.UIB05.Uebung04.Kinoprogramm.Comparator.ZeitComparator;
 
 public class KinoTest {
 
@@ -18,4 +24,7 @@ public class KinoTest {
 			e.printStackTrace();
 		}
 	}
+	
+
+
 }
