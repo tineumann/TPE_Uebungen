@@ -8,7 +8,7 @@ public class CollatzSim {
 	}
 
 	public static void collatzMultiThread() {
-		CollatzThread ct = new CollatzThread();
+		CollatzThread ct = new CollatzThread(1000000000);
 
 		Thread t1 = new Thread(ct);
 		Thread t2 = new Thread(ct);
@@ -18,7 +18,13 @@ public class CollatzSim {
 		Thread t6 = new Thread(ct);
 		Thread t7 = new Thread(ct);
 		Thread t8 = new Thread(ct);
+<<<<<<< HEAD
 
+=======
+		
+		long startzeit = System.currentTimeMillis();
+		
+>>>>>>> FETCH_HEAD
 		t1.start();
 		t2.start();
 		t3.start();
@@ -27,7 +33,11 @@ public class CollatzSim {
 		t6.start();
 		t7.start();
 		t8.start();
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> FETCH_HEAD
 		try {
 			t1.join();
 			t2.join();
@@ -40,6 +50,11 @@ public class CollatzSim {
 		} catch (InterruptedException e) {
 			System.out.println("Thread wurde unterbrochen.");
 		}
+		
+		long endzeit = System.currentTimeMillis();
+		long dauer = endzeit - startzeit;
+		
+		System.out.println("benötigte Zeit: " + dauer + " ms");
 		
 		System.out.println("Laengste Folge:" + "(Laenge:"
 					+ CollatzThread.getLaengsteFolge().size() + "; Startwert: "
